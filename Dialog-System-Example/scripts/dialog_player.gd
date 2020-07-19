@@ -16,13 +16,13 @@ var _Story_Reader
 func _ready():
 	var Story_Reader_Class = load("res://addons/EXP-System-Dialog/Reference_StoryReader/EXP_StoryReader.gd")
 	_Story_Reader = Story_Reader_Class.new()
-	
+
 	var story = load("res://Dialog-System-Example/stories/Example_Story_Baked.tres")
 	_Story_Reader.read(story)
-	
+
 	_Dialog_Box.visible = false
 	_SpaceBar_Icon.visible = false
-	
+
 	play_dialog("Plains/Battle/Slime")
 
 
@@ -66,7 +66,7 @@ func _is_waiting():
 
 func _get_next_node():
 	_nid = _Story_Reader.get_nid_from_slot(_did, _nid, 0)
-	
+
 	if _nid == _final_nid:
 		_Dialog_Box.visible = false
 
@@ -84,7 +84,7 @@ func _play_node():
 	var text = _Story_Reader.get_text(_did, _nid)
 	var speaker = _get_tagged_text("speaker", text)
 	var dialog = _get_tagged_text("dialog", text)
-		
+
 	_Speaker_LBL.text = speaker
 	_Body_LBL.text = dialog
 	_Body_AnimationPlayer.play("TextDisplay")
