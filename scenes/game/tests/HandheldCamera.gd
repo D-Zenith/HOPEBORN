@@ -1,21 +1,27 @@
-extends Timer
-onready var Cam = get_parent()
+extends Camera
+onready var ShakeTimer = get_child(0)
 
-export var  speed = 0.5
+export var  speed = 0.3
 export var switch_dir_time = 0.5
+export var rotate = true
+export var rotate_strength = 1.0
 var target_v_offset = 0
 var dir = 1
 var rot_dir = -1
-var target_rot = 0
+var target_rot_x = 0
+var target_rot_z = 0
 
 func _process(delta):
 	target_v_offset = rand_range(0, speed) * dir
-	target_rot = rand_range(0,5) * rot_dir
-	Cam.v_offset = lerp(Cam.v_offset, target_v_offset,delta)
-	Cam.rotation_degrees.x = lerp(Cam.rotation_degrees.x, target_rot, delta)
+	target_rot_x = rand_range(0,2) * rot_dir * rotate_strength
+	target_rot_z = rand_range(0,2) * rot_dir * rotate_strength
+	v_offset = lerp(v_offset, target_v_offset,delta)
+	if rotate:
+		rotation_degrees.x = lerp(rotation_degrees.x, target_rot_x, delta)
+	#	rotation_degrees.z = lerp(rotation_degrees.z, target_rot_z, delta)
 func _ready():
-	wait_time = switch_dir_time
-	start()
+	ShakeTimer.wait_time = switch_dir_time
+	ShakeTimer.start()
 
 func _on_ShakeTimer_timeout():
 	dir *= -1
