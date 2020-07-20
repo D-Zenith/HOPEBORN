@@ -37,7 +37,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "EXP-System-Dialog", "github-integration" )
+enabled=PoolStringArray( "EXP-System-Dialog" )
 
 [input]
 
@@ -81,3 +81,6 @@ move_down={
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+quality/godrays/sample_number=50
+quality/godrays/use_pcf5=false
+quality/godrays/dither_amount=1.0
