@@ -20,12 +20,6 @@ run/main_scene="res://scenes/game/menus/menuscreen.tscn"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
-[autoload]
-
-UserData="*res://addons/github-integration/scripts/user_data.gd"
-IconLoaderGithub="*res://addons/github-integration/scripts/IconLoaderGithub.gd"
-RestHandler="*res://addons/github-integration/scripts/RestHandler.gd"
-
 [display]
 
 window/size/resizable=false
@@ -37,7 +31,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "EXP-System-Dialog", "github-integration" )
+enabled=PoolStringArray( "EXP-System-Dialog" )
 
 [input]
 
@@ -81,3 +75,6 @@ move_down={
 [rendering]
 
 environment/default_environment="res://default_env.tres"
+quality/godrays/sample_number=50
+quality/godrays/use_pcf5=false
+quality/godrays/dither_amount=1.0
