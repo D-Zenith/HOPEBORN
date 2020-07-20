@@ -24,7 +24,7 @@ uv1_scale = Vector3( 20, 20, 20 )
 [sub_resource type="SpatialMaterial" id=5]
 albedo_texture = ExtResource( 2 )
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 28.8485, 3.38859, 6.09127 )
 
 [sub_resource type="CubeMesh" id=7]
@@ -96,7 +96,7 @@ material/0 = SubResource( 5 )
 script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="GameWorld/Room/Spatial"]
-shape = SubResource( 11 )
+shape = SubResource( 6 )
 
 [node name="Camera" type="Camera" parent="GameWorld/Room/Spatial"]
 transform = Transform( 0.874662, 0, 0.484733, 0, 1, 0, -0.484733, 0, 0.874662, 12.0885, 0.830837, 3.20724 )
@@ -106,7 +106,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13.1931 )
 script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="GameWorld/Room/Spatial2"]
-shape = SubResource( 11 )
+shape = SubResource( 6 )
 
 [node name="Camera" type="Camera" parent="GameWorld/Room/Spatial2"]
 transform = Transform( 0.738173, -0.14026, 0.65987, 0, 0.978148, 0.207912, -0.674612, -0.153475, 0.722042, 9.70869, 0.103795, 9.02348 )
