@@ -60,13 +60,8 @@ tracks/1/keys = {
 "values": [ 0.1, 0.105, 0.1 ]
 }
 
-[node name="GameplayTest" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="GameplayTest" type="Spatial"]
 script = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="GameWorld" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
@@ -146,7 +141,7 @@ spot_range = 9.16186
 [node name="Player" type="KinematicBody" parent="GameWorld" groups=[
 "PLAYER",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.278494, 18.5894 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.278494, 16.9683 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="GameWorld/Player"]
@@ -154,6 +149,7 @@ shape = SubResource( 9 )
 
 [node name="Camera" type="Camera" parent="GameWorld/Player"]
 transform = Transform( 1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, 4.23979, 7.33295 )
+current = true
 
 [node name="Sprite3D" type="Sprite3D" parent="GameWorld/Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )

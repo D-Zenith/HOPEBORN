@@ -15,28 +15,26 @@ func goto_scene(path): # game requests to switch to this scene
 	if loader == null: # check for errors
 		print("error")
 		return
-	
-	
-	
+
 	current_scene.queue_free() # get rid of the old scene
-	
+
 	# start your load animation
 	anim.play("fade")
-	
+
 	wait_frames = 1
 func _process(time):
 	if loader == null:
 		set_process(false)
 		return
-	if wait_frames > 0: 
+	if wait_frames > 0:
 		wait_frames -= 1
 		return
 	var t = OS.get_ticks_msec()
-	while OS.get_ticks_msec() < t + time_max: 
-	
+	while OS.get_ticks_msec() < t + time_max:
+
 	# loading happens here
 		var err = loader.poll()
-	
+
 		if err == ERR_FILE_EOF: # load finished
 			var resource = loader.get_resource()
 			loader = null
@@ -60,10 +58,10 @@ func _process(time):
 var delay=false
 func set_new_scene(scene_resource):
 	timer.start()
-	
+
 	print("start")
 	current_scene = scene_resource.instance()
-	
+
 
 
 
