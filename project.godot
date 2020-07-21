@@ -78,6 +78,7 @@ move_down={
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
 quality/godrays/sample_number=50
 quality/godrays/use_pcf5=false
