@@ -63,7 +63,7 @@ __meta__ = {
 }
 
 [node name="logo_full" type="Sprite" parent="control"]
-position = Vector2( 512, 224 )
+position = Vector2( 512, 225.498 )
 scale = Vector2( 0.65529, 0.633663 )
 texture = ExtResource( 1 )
 
@@ -112,7 +112,7 @@ autoplay = "smooth"
 anims/smooth = SubResource( 2 )
 
 [node name="prompt" type="Label" parent="."]
-modulate = Color( 0, 0, 0, 1 )
+modulate = Color( 0, 0, 0, 0.58 )
 margin_top = 384.0
 margin_right = 1024.0
 margin_bottom = 448.0
