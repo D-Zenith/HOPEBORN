@@ -9,6 +9,7 @@ onready var anim=$AnimationPlayer
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() -1)
+	print(current_scene.name)
 
 func goto_scene(path): # game requests to switch to this scene
 	loader = ResourceLoader.load_interactive(path)
@@ -61,8 +62,9 @@ var delay=false
 func set_new_scene(scene_resource):
 	timer.start()
 	
-	print("start")
+
 	current_scene = scene_resource.instance()
+	print(current_scene.name)
 	
 
 
