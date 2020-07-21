@@ -84,7 +84,7 @@ __meta__ = {
 [node name="temp_bg" parent="control" instance=ExtResource( 5 )]
 
 [node name="prompt" type="Label" parent="."]
-modulate = Color( 0, 0, 0, 0 )
+modulate = Color( 0, 0, 0, 0.58 )
 margin_top = 384.0
 margin_right = 1024.0
 margin_bottom = 448.0
