@@ -4,17 +4,18 @@
 [ext_resource path="res://scenes/game/tests/textures_n_sprites/player.png" type="Texture" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.5, 0.5, 0.5 )
+extents = Vector3( 0.7, 0.5, 0.7 )
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.13985 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 shape = SubResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.90233, 1.64067, -1.24134 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.65, 0 )
 pixel_size = 0.04
 billboard = 2
 shaded = true
