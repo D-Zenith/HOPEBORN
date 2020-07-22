@@ -1,12 +1,36 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Square.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Dialog-System-Example/fonts/Cave-Story.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/game/menus/fileselect.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/tests/HospitalTest.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxEmpty" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 56
 font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=13]
 
 [node name="fileselect" type="Node2D"]
 script = ExtResource( 2 )
@@ -29,60 +53,84 @@ __meta__ = {
 }
 
 [node name="quit" type="Button" parent="control/background"]
-anchor_left = 0.752
-anchor_top = 0.769
-anchor_right = 0.951
-anchor_bottom = 0.957
-margin_left = -0.467834
-margin_top = -0.216614
-margin_right = 23.7562
-margin_bottom = -0.0166016
+modulate = Color( 0, 0.670588, 1, 1 )
+anchor_left = 0.766
+anchor_top = 0.893
+anchor_right = 0.984
+anchor_bottom = 0.962
+margin_left = -0.384033
+margin_top = 0.199951
+margin_right = 0.383972
+margin_bottom = -0.200073
+custom_styles/hover = SubResource( 20 )
+custom_styles/pressed = SubResource( 21 )
+custom_styles/normal = SubResource( 2 )
 custom_fonts/font = SubResource( 1 )
-text = "quit"
+custom_colors/font_color_hover = Color( 0.129412, 0, 0.584314, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.0196078, 0.305882, 1 )
+text = "QUIT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="continue" type="Button" parent="control/background"]
-anchor_left = 0.052
-anchor_top = 0.098
-anchor_right = 0.302
-anchor_bottom = 0.287
-margin_left = 0.141312
-margin_top = 2.34813
-margin_right = 0.141296
-margin_bottom = 1.94814
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.016
+anchor_top = 0.893
+anchor_right = 0.234
+anchor_bottom = 0.962
+margin_left = -0.384001
+margin_top = 0.199951
+margin_right = 0.383987
+margin_bottom = -0.200073
+custom_styles/hover = SubResource( 18 )
+custom_styles/pressed = SubResource( 19 )
+custom_styles/normal = SubResource( 7 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_hover = Color( 0.647059, 0.211765, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0.309804, 0, 0, 1 )
 text = "continue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="new" type="Button" parent="control/background"]
-anchor_left = 0.051
-anchor_top = 0.372
-anchor_right = 0.315
-anchor_bottom = 0.56
-margin_left = -0.333012
-margin_top = -0.247375
-margin_right = -42.669
-margin_bottom = -0.0473633
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.273
+anchor_top = 0.893
+anchor_right = 0.492
+anchor_bottom = 0.962
+margin_left = 0.447998
+margin_top = 0.199951
+margin_right = 0.191986
+margin_bottom = -0.200073
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/normal = SubResource( 10 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_hover = Color( 0.647059, 0.211765, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0.309804, 0, 0, 1 )
 text = "new game"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="settings" type="Button" parent="control/background"]
-anchor_left = 0.051
-anchor_top = 0.626
-anchor_right = 0.301
-anchor_bottom = 0.815
-margin_left = -0.333012
-margin_top = 0.179871
-margin_right = -28.333
-margin_bottom = -0.220123
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.516
+anchor_top = 0.893
+anchor_right = 0.734
+anchor_bottom = 0.962
+margin_left = -0.384033
+margin_top = 0.199951
+margin_right = 0.383972
+margin_bottom = -0.200073
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/normal = SubResource( 13 )
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_hover = Color( 0.647059, 0.211765, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0.309804, 0, 0, 1 )
 text = "settings"
 __meta__ = {
 "_edit_use_anchors_": false

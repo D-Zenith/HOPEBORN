@@ -13,12 +13,12 @@ __meta__ = {
 
 [node name="igm" type="MenuButton" parent="."]
 show_behind_parent = true
-anchor_left = 0.905
+anchor_left = 0.945
 anchor_right = 0.999
-anchor_bottom = 0.167
-margin_left = 0.279968
-margin_right = 4.02393
-margin_bottom = -0.199997
+anchor_bottom = 0.093
+margin_left = 0.319946
+margin_right = 4.02399
+margin_bottom = 0.199997
 icon = ExtResource( 2 )
 expand_icon = true
 items = [ "save_game", null, 0, false, false, 0, 0, null, "", false, "quit", null, 0, false, false, 1, 0, null, "", false ]
