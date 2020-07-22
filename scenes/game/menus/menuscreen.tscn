@@ -1,14 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://textures/logos/logo_full.png" type="Texture" id=1]
 [ext_resource path="res://Dialog-System-Example/fonts/Cave-Story.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/game/menus/menu.gd" type="Script" id=3]
-[ext_resource path="res://addons/github-integration/fonts/Roboto-Black.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://scenes/game/tests/temp_bg.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
-font_data = ExtResource( 4 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 46
@@ -74,7 +73,8 @@ margin_top = 552.0
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_fonts/font = SubResource( 1 )
-text = "HOPEBORN V1.0 © Double Blade Studio - 2020"
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "HOPEBORN V1.0 © Double Blade Studios - 2020"
 align = 1
 valign = 1
 __meta__ = {
