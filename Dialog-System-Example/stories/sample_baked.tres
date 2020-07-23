@@ -6,16 +6,6 @@
 script = ExtResource( 1 )
 TYPE = "EXP_Baked_Story"
 story = {
-1: {
-"nodes": {
-
-}
-},
-2: {
-"nodes": {
-
-}
-},
 3: {
 "nodes": {
 1: {
@@ -59,43 +49,8 @@ story = {
 "text": "<end>"
 }
 }
-},
-4: {
-"nodes": {
-
-}
-},
-5: {
-"nodes": {
-
-}
-},
-6: {
-"nodes": {
-
-}
-},
-7: {
-"nodes": {
-
-}
-},
-8: {
-"nodes": {
-
-}
-},
-9: {
-"nodes": {
-
-}
 }
 }
 names = {
-"Plains/Battle/Bandit": 6,
-"Plains/Battle/Slime": 3,
-"Sign/Village/West/Exit": 4,
-"Village/Battle/Elder": 2,
-"Village/Pot": 5,
-"Village/Start": 1
+"sample": 3
 }

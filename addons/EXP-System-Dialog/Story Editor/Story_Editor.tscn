@@ -164,9 +164,9 @@ __meta__ = {
 
 [node name="Group_Manager" type="VBoxContainer" parent="VBoxContainer/HBoxContainer3"]
 visible = false
-margin_left = 824.0
-margin_right = 1080.0
-margin_bottom = 716.0
+margin_left = 768.0
+margin_right = 1024.0
+margin_bottom = 548.0
 rect_min_size = Vector2( 256, 0 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -202,7 +202,7 @@ text = "Delete"
 [node name="Group_ItemList" type="ItemList" parent="VBoxContainer/HBoxContainer3/Group_Manager"]
 margin_top = 28.0
 margin_right = 256.0
-margin_bottom = 716.0
+margin_bottom = 548.0
 size_flags_vertical = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
@@ -222,7 +222,7 @@ margin_left = 69.0
 margin_right = 233.0
 margin_bottom = 24.0
 text = "Human Readable LBL"
-items = [ "Human Readable LBL", null, false, 0, null, "DID", null, false, 1, null ]
+items = [ "Human Readable LBL", null, false, 0, null, "DID", null, false, 1, null, "Record Name", null, false, 2, null ]
 selected = 0
 
 [node name="Search_LineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer2"]

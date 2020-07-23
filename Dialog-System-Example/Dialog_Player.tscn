@@ -37,6 +37,9 @@ tracks/0/keys = {
 
 [node name="Dialog_Player" type="Node"]
 script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Dialog_Box" type="Control" parent="."]
 anchor_right = 1.0
@@ -83,6 +86,7 @@ size_flags_vertical = 3
 custom_fonts/font = ExtResource( 4 )
 text = "This is where the dialog text is displayed.
 Press F6 to run this example. ^_^"
+percent_visible = 0.0
 
 [node name="Body_AnimationPlayer" type="AnimationPlayer" parent="Dialog_Box/Body_NinePatchRect/MarginContainer/Body_Label"]
 anims/TextDisplay = SubResource( 1 )
@@ -135,6 +139,10 @@ __meta__ = {
 [node name="SpaceBar_Label" type="Label" parent="Dialog_Box/Body_NinePatchRect/SpaceBar_NinePatchRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -2.9967
+margin_top = -2.99664
+margin_right = -2.9967
+margin_bottom = -2.99664
 custom_fonts/font = ExtResource( 3 )
 text = "Press SpaceBar"
 align = 1

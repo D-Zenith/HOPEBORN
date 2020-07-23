@@ -5,7 +5,6 @@ onready var _Body_LBL = self.find_node("Body_Label")
 onready var _Dialog_Box = self.find_node("Dialog_Box")
 onready var _Speaker_LBL = self.find_node("Speaker_Label")
 onready var _SpaceBar_Icon = self.find_node("SpaceBar_NinePatchRect")
-
 var _did = 0
 var _nid = 0
 var _final_nid = 0
@@ -17,13 +16,13 @@ func _ready():
 	var Story_Reader_Class = load("res://addons/EXP-System-Dialog/Reference_StoryReader/EXP_StoryReader.gd")
 	_Story_Reader = Story_Reader_Class.new()
 
-	var story = load("res://Dialog-System-Example/stories/Example_Story_Baked.tres")
+	var story = load("res://Dialog-System-Example/stories/sample_baked.tres")
 	_Story_Reader.read(story)
 
 	_Dialog_Box.visible = false
 	_SpaceBar_Icon.visible = false
 
-	play_dialog("Plains/Battle/Slime")
+	play_dialog("sample")
 
 
 func _input(event):
