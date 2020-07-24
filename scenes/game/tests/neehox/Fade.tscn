@@ -3,7 +3,6 @@
 [ext_resource path="res://scenes/game/tests/neehox/Fade.gd" type="Script" id=1]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Load"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
@@ -18,7 +17,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "Unload"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:color")
 tracks/0/interp = 1
