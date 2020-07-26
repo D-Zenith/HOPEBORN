@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://textures/logos/logo_full.png" type="Texture" id=1]
-[ext_resource path="res://Dialog-System-Example/fonts/Cave-Story.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://textures/fonts/Cave-Story.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://scripts/game/menus/menu.gd" type="Script" id=3]
 [ext_resource path="res://scenes/game/tests/temp_bg.tscn" type="PackedScene" id=5]
 
@@ -83,10 +83,10 @@ __meta__ = {
 [node name="temp_bg" parent="control" instance=ExtResource( 5 )]
 
 [node name="prompt" type="Label" parent="."]
-modulate = Color( 0, 0, 0, 0.58 )
-margin_top = 400.0
+modulate = Color( 0, 0, 0, 1 )
+margin_top = 408.0
 margin_right = 1024.0
-margin_bottom = 464.0
+margin_bottom = 472.0
 custom_fonts/font = SubResource( 2 )
 text = "PRESS ENTER"
 align = 1

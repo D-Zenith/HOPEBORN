@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Dialog-System-Example/fonts/Cave-Story.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://textures/fonts/Cave-Story.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/game/menus/fileselect.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/tests/HospitalTest.tscn" type="PackedScene" id=3]
 

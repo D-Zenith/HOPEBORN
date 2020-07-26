@@ -1,9 +1,9 @@
 extends Camera
 onready var ShakeTimer = get_child(0)
 
-export var  speed = 0.3
-export var switch_dir_time = 0.5
-export var rotate = true
+export var  speed = 0.05
+export var switch_dir_time = 0.6
+export var rotate = false
 export var rotate_strength = 1.0
 var target_v_offset = 0
 var dir = 1
