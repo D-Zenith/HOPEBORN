@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="SphereMesh" id=1]
+radius = 0.5
+height = 1.0
+
+[node name="EnemyOrb" type="MeshInstance"]
+mesh = SubResource( 1 )
+material/0 = null
