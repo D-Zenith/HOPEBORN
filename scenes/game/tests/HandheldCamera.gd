@@ -1,9 +1,9 @@
 extends Camera
 onready var ShakeTimer = get_child(0)
 
-export var  speed = 0.3
-export var switch_dir_time = 0.5
-export var rotate = true
+export var  speed = 0.05
+export var switch_dir_time = 0.6
+export var rotate = false
 export var rotate_strength = 1.0
 var target_v_offset = 0
 var dir = 1
@@ -12,6 +12,7 @@ var target_rot_x = 0
 var target_rot_z = 0
 
 func _process(delta):
+	
 	target_v_offset = rand_range(0, speed) * dir
 	target_rot_x = rand_range(0,2) * rot_dir * rotate_strength
 	target_rot_z = rand_range(0,2) * rot_dir * rotate_strength

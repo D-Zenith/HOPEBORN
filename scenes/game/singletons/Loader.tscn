@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/game/singletons(global scripts)/loader.gd" type="Script" id=1]
 [ext_resource path="res://textures/logos/logo.png" type="Texture" id=2]
+[ext_resource path="res://textures/fonts/Cave-Story.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="Animation" id=1]
-resource_name = "fade"
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("background:color")
 tracks/0/interp = 1
@@ -29,8 +32,33 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("background/loading:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
 
 [node name="Loader" type="Node2D"]
+visible = false
 rotation = -6.28319
 script = ExtResource( 1 )
 
@@ -44,23 +72,40 @@ __meta__ = {
 
 [node name="logo" type="TextureRect" parent="background"]
 modulate = Color( 0, 0, 0, 0 )
-anchor_left = 0.105
-anchor_top = 0.233
-anchor_right = 0.906
-anchor_bottom = 0.733
-margin_left = 0.245171
-margin_top = -0.108704
-margin_right = 819.021
-margin_bottom = 299.891
-rect_scale = Vector2( 0.5, 0.5 )
+anchor_left = 0.016
+anchor_top = 0.013
+anchor_right = 0.23
+anchor_bottom = 0.151
+margin_left = -0.384039
+margin_top = 0.200076
+margin_right = 1419.48
+margin_bottom = 517.4
+rect_scale = Vector2( 0.134195, 0.137269 )
 texture = ExtResource( 2 )
 stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="loading" type="RichTextLabel" parent="background"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.781
+anchor_top = 0.907
+anchor_right = 0.988
+anchor_bottom = 0.976
+margin_left = 0.253662
+margin_top = -0.196289
+margin_right = -147.714
+margin_bottom = -28.5963
+rect_scale = Vector2( 3.301, 3.18 )
+custom_fonts/normal_font = SubResource( 1 )
+text = "Loading..."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/fade = SubResource( 1 )
+anims/fade = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

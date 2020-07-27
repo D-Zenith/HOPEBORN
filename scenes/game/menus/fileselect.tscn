@@ -1,16 +1,40 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Square.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://textures/fonts/Cave-Story.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/game/menus/fileselect.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/tests/HospitalTest.tscn" type="PackedScene" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=4]
 size = 56
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
 [node name="fileselect" type="Node2D"]
 script = ExtResource( 2 )
-scene = ExtResource( 3 )
+_new_game = ExtResource( 3 )
 
 [node name="control" type="Control" parent="."]
 margin_right = 1024.0
@@ -24,17 +48,93 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="control/background"]
-margin_left = 398.0
-margin_top = 181.0
-margin_right = 626.0
-margin_bottom = 294.0
-custom_fonts/font = SubResource( 1 )
-text = "Play"
+[node name="quit" type="Button" parent="control/background"]
+modulate = Color( 0, 0.670588, 1, 1 )
+anchor_left = 0.766
+anchor_top = 0.893
+anchor_right = 0.984
+anchor_bottom = 0.962
+margin_left = -0.384033
+margin_top = 0.199951
+margin_right = 0.383972
+margin_bottom = -0.200073
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.129412, 0, 0.584314, 1 )
+custom_colors/font_color_pressed = Color( 0, 0.0196078, 0.305882, 1 )
+text = "QUIT"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="control/background/Button" to="." method="_on_Button_pressed"]
+
+[node name="continue" type="Button" parent="control/background"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.016
+anchor_top = 0.893
+anchor_right = 0.234
+anchor_bottom = 0.962
+margin_left = -0.384001
+margin_top = 0.199951
+margin_right = 0.383987
+margin_bottom = -0.200073
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.647059, 0.211765, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0.309804, 0, 0, 1 )
+text = "continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="new" type="Button" parent="control/background"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.273
+anchor_top = 0.893
+anchor_right = 0.492
+anchor_bottom = 0.962
+margin_left = 0.447998
+margin_top = 0.199951
+margin_right = 0.191986
+margin_bottom = -0.200073
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.647059, 0.211765, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0.309804, 0, 0, 1 )
+text = "new game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="settings" type="Button" parent="control/background"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.516
+anchor_top = 0.893
+anchor_right = 0.734
+anchor_bottom = 0.962
+margin_left = -0.384033
+margin_top = 0.199951
+margin_right = 0.383972
+margin_bottom = -0.200073
+custom_styles/hover = SubResource( 11 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.647059, 0.211765, 0.211765, 1 )
+custom_colors/font_color_pressed = Color( 0.309804, 0, 0, 1 )
+text = "settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="control/background/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="control/background/continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="control/background/new" to="." method="_on_new_pressed"]
