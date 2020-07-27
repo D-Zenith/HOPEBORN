@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/woodtile.jpeg-72be2786a7d893879e6b69b84107a355.s3tc.stex"
-path.etc2="res://.import/woodtile.jpeg-72be2786a7d893879e6b69b84107a355.etc2.stex"
+path.s3tc="res://.import/woodtile.jpeg-45d5868fd0740736a837f5772de131e8.s3tc.stex"
+path.etc2="res://.import/woodtile.jpeg-45d5868fd0740736a837f5772de131e8.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/woodtile.jpeg"
-dest_files=[ "res://.import/woodtile.jpeg-72be2786a7d893879e6b69b84107a355.s3tc.stex", "res://.import/woodtile.jpeg-72be2786a7d893879e6b69b84107a355.etc2.stex" ]
+source_file="res://textures/environment/woodtile.jpeg"
+dest_files=[ "res://.import/woodtile.jpeg-45d5868fd0740736a837f5772de131e8.s3tc.stex", "res://.import/woodtile.jpeg-45d5868fd0740736a837f5772de131e8.etc2.stex" ]
 
 [params]
 

@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://nodes/player/PlayerCombat.gd" type="Script" id=1]
-[ext_resource path="res://scenes/game/tests/unknown.png" type="Texture" id=2]
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game/combat/CombatScene.gd" type="Script" id=4]
-
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -56,7 +54,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, -5 )
 pixel_size = 0.05
 billboard = 2
 shaded = true
-texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 100, 75 )
 

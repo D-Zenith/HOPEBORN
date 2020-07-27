@@ -3,7 +3,7 @@ extends Control
 onready var EnemyHP = $UI/EnemyHPBar
 onready var MyHP = $UI/MyHPBar
 
-onready var EnemyOrb = load("res://scenes/game/tests/EnemyOrb.tscn")
+onready var EnemyOrb = load("res://scenes/game/combat/EnemyOrb.tscn")
 
 var my_turn = true
 var escape_chance = 30 #%
@@ -26,7 +26,7 @@ func roll_dice(chance):
 func _on_AttackButton_pressed():
 	var will_dodge = roll_dice(enemy_dodge)
 	if will_dodge:
-		OS.alert("Your aim is S$!#!")
+		("Your aim is S$!#!")
 	else:
 		enemy_hp -= attack_dmg
 	
@@ -44,9 +44,9 @@ func _on_RunButton_pressed():
 	randomize()
 	var will_escape = randi() % 101
 	if will_escape <= escape_chance:
-		OS.alert("You escaped successfully!")
+		("You escaped successfully!")
 	else:
-		OS.alert("You will die!")
+		("You will die!")
 
 func enemy_turn():
 	var orb = EnemyOrb.instance()

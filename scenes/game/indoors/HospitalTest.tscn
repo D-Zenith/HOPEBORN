@@ -4,11 +4,11 @@
 [ext_resource path="res://scenes/game/indoors/HospitalTest.gd" type="Script" id=2]
 [ext_resource path="res://nodes/dialog/dialog_node.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://textures/sprites/lightbulb.png" type="Texture" id=5]
+[ext_resource path="res://textures/environment/lightbulb.png" type="Texture" id=5]
 [ext_resource path="res://scenes/game/menus/in_game_menu.tscn" type="PackedScene" id=6]
-[ext_resource path="res://nodes/Fade.tscn" type="PackedScene" id=7]
-[ext_resource path="res://textures/sprites/Dark_Wood_Floor.jpg" type="Texture" id=8]
-[ext_resource path="res://textures/sprites/trumploy.png" type="Texture" id=9]
+[ext_resource path="res://nodes/ui/Fade.tscn" type="PackedScene" id=7]
+[ext_resource path="res://textures/environment/Dark_Wood_Floor.jpg" type="Texture" id=8]
+[ext_resource path="res://textures/environment/trumploy.png" type="Texture" id=9]
 
 [sub_resource type="Environment" id=1]
 

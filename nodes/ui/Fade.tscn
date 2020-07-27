@@ -1,6 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://nodes/Fade.gd" type="Script" id=1]
+[ext_resource path="res://nodes/ui/Fade.gd" type="Script" id=1]
+
+
 
 [sub_resource type="Animation" id=1]
 tracks/0/type = "value"

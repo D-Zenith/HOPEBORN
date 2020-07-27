@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Dark_Wood_Floor.jpg-735e89009b8bd7434c623e4cbc2d44b6.s3tc.stex"
-path.etc2="res://.import/Dark_Wood_Floor.jpg-735e89009b8bd7434c623e4cbc2d44b6.etc2.stex"
+path.s3tc="res://.import/Dark_Wood_Floor.jpg-d106448a3c638f51f7d0d561d7eef113.s3tc.stex"
+path.etc2="res://.import/Dark_Wood_Floor.jpg-d106448a3c638f51f7d0d561d7eef113.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/sprites/Dark_Wood_Floor.jpg"
-dest_files=[ "res://.import/Dark_Wood_Floor.jpg-735e89009b8bd7434c623e4cbc2d44b6.s3tc.stex", "res://.import/Dark_Wood_Floor.jpg-735e89009b8bd7434c623e4cbc2d44b6.etc2.stex" ]
+source_file="res://textures/environment/Dark_Wood_Floor.jpg"
+dest_files=[ "res://.import/Dark_Wood_Floor.jpg-d106448a3c638f51f7d0d561d7eef113.s3tc.stex", "res://.import/Dark_Wood_Floor.jpg-d106448a3c638f51f7d0d561d7eef113.etc2.stex" ]
 
 [params]
 
