@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lightbulb.png-6f1a5bccde9f94f9cd8b9bf06e855a5a.stex"
+path="res://.import/lightbulb.png-eda6e456f232a4b12c039f0a8a6ac368.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/game/tests/textures_n_sprites/lightbulb.png"
-dest_files=[ "res://.import/lightbulb.png-6f1a5bccde9f94f9cd8b9bf06e855a5a.stex" ]
+source_file="res://textures/sprites/lightbulb.png"
+dest_files=[ "res://.import/lightbulb.png-eda6e456f232a4b12c039f0a8a6ac368.stex" ]
 
 [params]
 
