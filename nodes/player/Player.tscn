@@ -4,10 +4,6 @@
 [ext_resource path="res://textures/sprites/player/player.png" type="Texture" id=2]
 [ext_resource path="res://nodes/ui/ShakyCamera.tscn" type="PackedScene" id=3]
 
-
-
-
-
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.7, 1.7, 0.498254 )
 
@@ -21,6 +17,7 @@ shape = SubResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56947, 0 )
+cast_shadow = 2
 pixel_size = 0.04
 billboard = 2
 shaded = true

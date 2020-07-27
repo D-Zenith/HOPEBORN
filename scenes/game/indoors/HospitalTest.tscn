@@ -165,7 +165,7 @@ material/0 = ExtResource( 1 )
 [node name="door" type="Area" parent="WorldEnvironment/HospitalRoom/door"]
 
 [node name="CollisionShape" type="CollisionShape" parent="WorldEnvironment/HospitalRoom/door/door"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4819e-07, -0.729088, -0.909586 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21766e-07, -0.729088, -0.747399 )
 shape = SubResource( 16 )
 
 [node name="Player" parent="WorldEnvironment/HospitalRoom" instance=ExtResource( 4 )]
