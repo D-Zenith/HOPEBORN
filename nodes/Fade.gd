@@ -12,4 +12,5 @@ func unload():
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Unload":
 		print("animation finished")
-		get_tree().change_scene(next_scene)
+		Loader.goto_scene(next_scene)
+#		get_tree().change_scene(next_scene)
