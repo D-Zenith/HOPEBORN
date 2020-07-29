@@ -59,3 +59,6 @@ shadow_reverse_cull_face = true
 
 [node name="GodRays" type="Spatial" parent="DirectionalLight"]
 script = ExtResource( 3 )
+exposure = 0.5
+attenuation = 2.0
+light_size = 0.5

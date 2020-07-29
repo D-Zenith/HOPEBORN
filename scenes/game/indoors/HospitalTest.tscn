@@ -169,7 +169,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21766e-07, -0.729088, -0.747
 shape = SubResource( 16 )
 
 [node name="Player" parent="WorldEnvironment/HospitalRoom" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38511, 0.0635699, 1.55264 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38511, 0.276254, 1.55264 )
 
 [node name="Control" parent="." instance=ExtResource( 6 )]
 

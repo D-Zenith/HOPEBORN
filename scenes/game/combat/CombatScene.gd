@@ -30,10 +30,10 @@ func _on_AttackButton_pressed():
 	else:
 		enemy_hp -= attack_dmg
 	
-	enemy_turn()
+	consume_turn()
 	
 func _on_ItemButton_pressed():
-	pass # Replace with function body.
+	$UI/ItemsContainer.visible = !$UI/ItemsContainer.visible
 
 
 func _on_ScanButton_pressed():
@@ -48,7 +48,13 @@ func _on_RunButton_pressed():
 	else:
 		("You will die!")
 
+func consume_turn():
+	enemy_turn()
+
+
 func enemy_turn():
+	my_turn  = false
 	var orb = EnemyOrb.instance()
+	orb.dir = ($CombatField/Player.translation - $CombatField/Enemy.translation).normalized()
 	$CombatField/Enemy.add_child(orb)
 	

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/horrorsus.png-dd0e97e5703fd706b5521c0efffb4836.stex"
+path="res://.import/mainc_sheet.png-429340f4c8e509b379a341d35b3d9e75.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/sprites/enemies/horrorsus.png"
-dest_files=[ "res://.import/horrorsus.png-dd0e97e5703fd706b5521c0efffb4836.stex" ]
+source_file="res://textures/sprites/player/mainc_sheet.png"
+dest_files=[ "res://.import/mainc_sheet.png-429340f4c8e509b379a341d35b3d9e75.stex" ]
 
 [params]
 
