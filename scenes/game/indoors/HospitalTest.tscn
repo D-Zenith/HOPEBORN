@@ -82,7 +82,7 @@ environment = SubResource( 1 )
 [node name="HospitalRoom" type="Spatial" parent="WorldEnvironment"]
 
 [node name="Camera2" parent="WorldEnvironment/HospitalRoom" instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 0.984549, 0.175109, 0, -0.175109, 0.984549, 0.919465, 3.53146, 7.77718 )
+transform = Transform( 1, 0, 0, 0, 0.984549, 0.175109, 0, -0.175109, 0.984549, 0.211015, 3.39093, 6.96407 )
 
 [node name="Walls" type="MeshInstance" parent="WorldEnvironment/HospitalRoom"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
@@ -173,7 +173,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21766e-07, -0.729088, -0.747
 shape = SubResource( 16 )
 
 [node name="Player" parent="WorldEnvironment/HospitalRoom" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38511, 0.276254, 1.55264 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38511, 0.0985789, 1.55264 )
 camera_on = false
 
 [node name="Control" parent="." instance=ExtResource( 6 )]

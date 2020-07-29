@@ -7,7 +7,7 @@
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.7, 1.7, 0.498254 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=2]
 resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3D:frame")
@@ -22,7 +22,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
 length = 0.8
 loop = true
 tracks/0/type = "value"
@@ -38,7 +38,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3, 4 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=4]
 length = 0.85
 loop = true
 tracks/0/type = "value"
@@ -54,8 +54,7 @@ tracks/0/keys = {
 "values": [ 12, 13, 14, 15, 16 ]
 }
 
-[sub_resource type="Animation" id=10]
-length = 0.8
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3D:frame")
@@ -64,10 +63,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 18, 19, 20, 21 ]
+"values": [ 18, 19, 20, 21, 22 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -94,7 +93,7 @@ transform = Transform( 0.714907, 0, 0, 0, 0.974033, 0, 0, 0, 0.951591, 0, 1.6286
 shape = SubResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56947, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.73924, 0 )
 cast_shadow = 2
 pixel_size = 0.04
 billboard = 2
@@ -109,8 +108,8 @@ transform = Transform( 1, 0, 0, 0, 0.977201, 0.212314, 0, -0.212314, 0.977201, 0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 playback_speed = 1.2
-anims/idle = SubResource( 7 )
-anims/walk_backwards = SubResource( 8 )
-anims/walk_forward = SubResource( 9 )
-anims/walk_left = SubResource( 10 )
+anims/idle = SubResource( 2 )
+anims/walk_backwards = SubResource( 3 )
+anims/walk_forward = SubResource( 4 )
+anims/walk_left = SubResource( 5 )
 anims/walk_right = SubResource( 6 )

@@ -4,7 +4,6 @@
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game/map/area1.gd" type="Script" id=3]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0, 1, 0.203922, 1 )
 
@@ -91,6 +90,6 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 49.6445
 shape = SubResource( 7 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 0.0296486, 0, 0.99956, 0, 1, 0, -0.99956, 0, 0.0296486, 45.4393, 0, 2.14 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 45.4393, 0, 2.14 )
 [connection signal="area_entered" from="south_exit" to="." method="_on_south_exit_area_entered"]
 [connection signal="body_entered" from="south_exit" to="." method="_on_south_exit_body_entered"]
