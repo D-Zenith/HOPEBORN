@@ -58,7 +58,7 @@ func _process(time):
 var delay=false
 func set_new_scene(scene_resource):
 	timer.start()
-
+	delay=false
 	print("start")
 	current_scene = scene_resource.instance()
 

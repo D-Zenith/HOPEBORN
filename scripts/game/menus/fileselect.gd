@@ -1,7 +1,7 @@
 extends Node2D
 
 export var _continue : PackedScene
-export var _new_game: PackedScene
+export var new_game: PackedScene
 
 
 
@@ -14,4 +14,4 @@ func _on_continue_pressed():
 	
 
 func _on_new_pressed():
-	Loader.goto_scene(_new_game.resource_path)
+	Loader.goto_scene(new_game.resource_path)
