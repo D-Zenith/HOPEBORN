@@ -84,7 +84,9 @@ tracks/0/keys = {
 "values": [ 6, 7, 8, 9, 10 ]
 }
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" groups=[
+"PLAYER",
+]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.13985 )
 script = ExtResource( 1 )
 
