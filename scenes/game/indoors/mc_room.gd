@@ -45,6 +45,8 @@ func _input(event):
 				proximity_item = "computer_screen"
 			"computer_screen":
 				$WorldEnvironment/Camera/CamAnimation.play_backwards("focus_computer")
+				HintBar.show_hint("Computer: Press E to use")
+				proximity_item="computer"
 			"lights":
 				if lights_on:
 					$room_anims.play("lights_off")
