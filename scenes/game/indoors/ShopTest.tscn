@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://default_env.tres" type="Environment" id=1]
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/SIsilicon.vfx.godrays/GodRays.gd" type="Script" id=3]
 [ext_resource path="res://scenes/game/indoors/Coffee Shop/Coffee Shop.obj" type="ArrayMesh" id=4]
 
 [node name="Screen" type="Control"]
@@ -56,6 +55,3 @@ material/29 = null
 transform = Transform( 0.991534, -0.0531831, -0.11846, -0.0259219, -0.974985, 0.220752, -0.127237, -0.215812, -0.968109, -6.68983, 6.35498, -10.6732 )
 shadow_enabled = true
 shadow_reverse_cull_face = true
-
-[node name="GodRays" type="Spatial" parent="DirectionalLight"]
-script = ExtResource( 3 )
