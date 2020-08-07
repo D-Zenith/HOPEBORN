@@ -40,5 +40,5 @@ extents = Vector3( 76.2811, 18.207, 130.223 )
 data = SubResource( 1 )
 
 [node name="Player" parent="." index="27" instance=ExtResource( 75 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -5.59308, 0.157348, 105.531 )
-speed = 20.0
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -5.59308, 0.197114, 105.531 )
+speed = 3.7
