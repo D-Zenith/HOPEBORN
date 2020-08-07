@@ -26,7 +26,6 @@ Loader="*res://scenes/game/singletons/Loader.tscn"
 
 [display]
 
-window/size/resizable=false
 window/size/test_width=1024
 window/size/test_height=600
 window/dpi/allow_hidpi=true
@@ -90,8 +89,10 @@ interact={
 [rendering]
 
 quality/2d/use_pixel_snap=true
+quality/subsurface_scattering/quality=2
 environment/default_clear_color=Color( 0, 0, 0, 1 )
-environment/default_environment="res://default_env.tres"
+quality/filters/msaa=3
+environment/default_environment="res://textures/environment/default_env.tres"
 quality/godrays/sample_number=50
 quality/godrays/use_pcf5=false
 quality/godrays/dither_amount=1.0

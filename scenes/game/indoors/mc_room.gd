@@ -77,4 +77,4 @@ func _on_switch_board_body_entered(body):
 
 func _on_exit_body_entered(body):
 	if body.name=="Player":
-		Loader.goto_scene("res://scenes/game/map/area1.tscn")
+		Loader.goto_scene("res://scenes/game/map/neighborhood.tscn")
