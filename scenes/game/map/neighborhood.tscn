@@ -7,6 +7,19 @@
 [sub_resource type="GIProbeData" id=1]
 
 [node name="neighborhood" instance=ExtResource( 2 )]
+transform = Transform( -1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0, 0, 0 )
+
+[node name="road" parent="." index="9"]
+transform = Transform( 0, 0, 100, 0, 1, 0, -5.84579, 0, 0, -51.4494, -0.290334, -2.03969 )
+
+[node name="Door" parent="house_plot/house/Door_Group/DoorFrame" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 2.84217e-14, 0, 1, 0.418003, 1.05, 0.0221 )
+
+[node name="Door006" parent="house_plot/house/Door_Group003/DoorFrame004" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 8.52651e-14, 0, 1, 0.418011, 1.05, 0.0221 )
+
+[node name="Door007" parent="house_plot001/house002/Door_Group004/DoorFrame005" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 2.84217e-14, 0, 1, 0.417999, 1.05, 0.0220995 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." index="24"]
 environment = ExtResource( 79 )
@@ -27,4 +40,5 @@ extents = Vector3( 76.2811, 18.207, 130.223 )
 data = SubResource( 1 )
 
 [node name="Player" parent="." index="27" instance=ExtResource( 75 )]
-transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -6.28004, 0.157348, 102.952 )
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -5.59308, 0.157348, 105.531 )
+speed = 20.0
