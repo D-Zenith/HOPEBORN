@@ -34,11 +34,11 @@ func _input(event):
 		match proximity_item:
 			"door":
 				if door_open:
-					$room_anims.play_backwards("open_door")
+					$WorldEnvironment/room_anims.play_backwards("open_door")
 					door_open=false
 				else:
 					door_open=true
-					$room_anims.play("open_door")
+					$WorldEnvironment/room_anims.play("open_door")
 			"computer":
 				$WorldEnvironment/Camera/CamAnimation.play("focus_computer")
 				HintBar.show_hint("Computer: Press E to exit")
@@ -49,10 +49,10 @@ func _input(event):
 				proximity_item="computer"
 			"lights":
 				if lights_on:
-					$room_anims.play("lights_off")
+					$"WorldEnvironment/Lamp_base2/Lampholder2/OmniLight".visible = false
 					lights_on=false
 				else:
-					$room_anims.play("lights_on")
+					$"WorldEnvironment/Lamp_base2/Lampholder2/OmniLight".visible = true
 					lights_on=true
 func _on_DesktopArea_body_entered(body):
 	if body.is_in_group("PLAYER"):

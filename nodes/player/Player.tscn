@@ -87,7 +87,6 @@ tracks/0/keys = {
 [node name="Player" type="KinematicBody" groups=[
 "PLAYER",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.13985 )
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
