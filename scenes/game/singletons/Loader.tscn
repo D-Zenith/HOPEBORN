@@ -4,7 +4,6 @@
 [ext_resource path="res://textures/logos/logo.png" type="Texture" id=2]
 [ext_resource path="res://textures/fonts/Cave-Story.ttf" type="DynamicFontData" id=3]
 
-
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
@@ -58,10 +57,16 @@ tracks/3/keys = {
 "values": [ false, true, true ]
 }
 
-[node name="Loader" type="Node2D"]
+[node name="Loader" type="Control"]
 visible = false
-rotation = -6.28319
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1024.0
+margin_bottom = -600.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="background" type="ColorRect" parent="."]
 margin_right = 1024.0
@@ -90,17 +95,17 @@ __meta__ = {
 
 [node name="loading" type="RichTextLabel" parent="background"]
 modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.781
-anchor_top = 0.907
-anchor_right = 0.988
-anchor_bottom = 0.976
-margin_left = 0.253662
-margin_top = -0.196289
-margin_right = -147.714
-margin_bottom = -28.5963
+anchor_left = 0.793
+anchor_top = 0.931
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.439392
+margin_top = 0.104431
+margin_right = -147.528
+margin_bottom = -28.2955
 rect_scale = Vector2( 3.301, 3.18 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "Loading..."
+text = "   Loading..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
