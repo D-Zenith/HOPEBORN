@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="HOPEBORN"
 run/main_scene="res://scenes/game/menus/menuscreen.tscn"
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
+boot_splash/image="res://icon.png"
+boot_splash/bg_color=Color( 1, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
