@@ -21,7 +21,6 @@ background_sky = SubResource( 1 )
 background_sky_orientation = Basis( 1, 0, -0.577, 0, 1, 0, 0, 0, 1 )
 background_energy = 1.16
 ambient_light_color = Color( 0.996078, 0.917647, 0.729412, 1 )
-ambient_light_sky_contribution = 0.65
 fog_enabled = true
 fog_color = Color( 1, 0.929412, 0.552941, 1 )
 fog_sun_color = Color( 1, 0.890196, 0.670588, 1 )
