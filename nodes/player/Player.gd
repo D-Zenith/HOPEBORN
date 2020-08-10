@@ -1,5 +1,5 @@
 extends KinematicBody
-export var speed = 3.7
+export var speed = 20
 export var jump_str=40
 export var camera_on = true
 export var gravity = -10
@@ -32,6 +32,7 @@ func _process(delta):
 	get_input_for_anim()
 	#sync anims
 	if c:
+		print("on land")
 		y=0
 		inair=false
 	# collision check can be used for bouncing later
