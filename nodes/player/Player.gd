@@ -1,8 +1,9 @@
 extends KinematicBody
-export var speed = 40
+export var speed = 3.7
 export var jump_str=40
 export var camera_on = true
 export var gravity = -10
+
 #higher gravity make it slower to walk and shorter jumps
 #tbh the jumps are too fast 
 var dir = []
@@ -31,7 +32,6 @@ func _process(delta):
 	get_input_for_anim()
 	#sync anims
 	if c:
-		var ObjectCollidedWith = c.collider as StaticBody
 		y=0
 		inair=false
 	# collision check can be used for bouncing later
@@ -39,11 +39,6 @@ func _process(delta):
 # made a gravity func in case we need variable gravity later
 func gravity():
 	return gravity
-
-
-
-
-
 
 #	if Input.is_action_just_pressed("cam_orb_left"):
 #		print("orb_left")
