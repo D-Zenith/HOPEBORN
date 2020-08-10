@@ -4,7 +4,7 @@
 [ext_resource path="res://textures/sprites/player/mainc_sheet.png" type="Texture" id=2]
 [ext_resource path="res://nodes/ui/ShakyCamera.tscn" type="PackedScene" id=3]
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=1]
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -100,7 +100,7 @@ hframes = 6
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 0.45, 0, 0, 0, -1.96701e-08, -1.5, 0, 0.45, -6.55671e-08, 0, 1.5, 0 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 0.955335, 0.295525, 0, -0.295525, 0.955335, 0, 3.94502, 4.87874 )

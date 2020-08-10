@@ -32,7 +32,6 @@ func _process(delta):
 	get_input_for_anim()
 	#sync anims
 	if c:
-		var ObjectCollidedWith = c.collider as StaticBody
 		y=0
 		inair=false
 	# collision check can be used for bouncing later
