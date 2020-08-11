@@ -4,9 +4,8 @@
 [ext_resource path="res://textures/sprites/player/mainc_sheet.png" type="Texture" id=2]
 [ext_resource path="res://nodes/ui/ShakyCamera.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 0.686815
-height = 1.59788
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.45, 0.45, 1.5 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "idle"
@@ -91,7 +90,7 @@ tracks/0/keys = {
 script = ExtResource( 1 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0, 1.78815, -7.10543e-15 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, -3.55271e-15, 1, 0, 1.54701, -7.10543e-15 )
 cast_shadow = 2
 pixel_size = 0.04
 billboard = 2
@@ -101,7 +100,7 @@ vframes = 4
 hframes = 6
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.5, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.2463, 0 )
 shape = SubResource( 1 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
