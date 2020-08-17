@@ -58,7 +58,6 @@ tracks/3/keys = {
 }
 
 [node name="Loader" type="Control"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -1024.0
@@ -78,14 +77,12 @@ __meta__ = {
 
 [node name="logo" type="TextureRect" parent="background"]
 modulate = Color( 0, 0, 0, 0 )
-anchor_left = 0.016
-anchor_top = 0.013
-anchor_right = 0.23
-anchor_bottom = 0.151
-margin_left = -0.384039
-margin_top = 0.200076
-margin_right = 1419.48
-margin_bottom = 517.4
+anchor_left = 0.008
+anchor_right = 0.223
+anchor_bottom = 0.137
+margin_left = -0.192
+margin_right = 1418.65
+margin_bottom = 517.8
 rect_scale = Vector2( 0.134195, 0.137269 )
 texture = ExtResource( 2 )
 stretch_mode = 4
@@ -95,17 +92,21 @@ __meta__ = {
 
 [node name="loading" type="RichTextLabel" parent="background"]
 modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.793
-anchor_top = 0.931
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 0.439392
-margin_top = 0.104431
-margin_right = -147.528
-margin_bottom = -28.2955
+anchor_left = 0.789
+anchor_top = 0.867
+anchor_right = 1.066
+anchor_bottom = 1.031
+margin_left = 0.0639648
+margin_top = -0.200012
+margin_right = -197.584
+margin_bottom = -67.6
 rect_scale = Vector2( 3.301, 3.18 )
 custom_fonts/normal_font = SubResource( 1 )
-text = "   Loading..."
+bbcode_enabled = true
+bbcode_text = "[tornado radius=2 freq=2] 
+  Loading..."
+text = " 
+  Loading..."
 __meta__ = {
 "_edit_use_anchors_": false
 }

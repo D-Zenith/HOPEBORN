@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://textures/fonts/Cave-Story.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scripts/game/menus/fileselect.gd" type="Script" id=2]
 [ext_resource path="res://scenes/game/indoors/mc_room.tscn" type="PackedScene" id=3]
+[ext_resource path="res://sound/soundtrack/hopeborn_test.wav" type="AudioStream" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -32,6 +33,23 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxEmpty" id=13]
 
+[sub_resource type="Animation" id=14]
+resource_name = "flicker"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("background:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0.141176, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
 [node name="fileselect" type="Node2D"]
 script = ExtResource( 2 )
 new_game = ExtResource( 3 )
@@ -48,7 +66,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -135,6 +152,15 @@ text = "settings"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="control"]
+autoplay = "flicker"
+anims/flicker = SubResource( 14 )
+
+[node name="soundtrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -1.196
+autoplay = true
 [connection signal="pressed" from="control/background/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="control/background/continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="control/background/new" to="." method="_on_new_pressed"]

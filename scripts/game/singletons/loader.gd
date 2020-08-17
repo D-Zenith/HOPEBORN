@@ -4,8 +4,10 @@ var loader
 var wait_frames
 var time_max = 100 # msec
 var current_scene
+
 onready var timer=$Timer
 onready var anim=$AnimationPlayer
+
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
@@ -61,9 +63,6 @@ func set_new_scene(scene_resource):
 	delay=false
 	print("start")
 	current_scene = scene_resource.instance()
-
-
-
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if "fade"==anim_name:

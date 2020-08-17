@@ -104,7 +104,8 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.24
 shape = SubResource( 1 )
 
 [node name="Camera" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 0.955335, 0.295525, 0, -0.295525, 0.955335, 0, 3.94502, 4.87874 )
+transform = Transform( 1, 0, 0, 0, 0.949557, 0.313595, 0, -0.313595, 0.949557, 0, 3.7718, 4.73714 )
+far = 800.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"

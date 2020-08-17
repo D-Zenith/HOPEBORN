@@ -1,9 +1,7 @@
 extends Spatial
 export var HintBarNode: NodePath
 
-
 var HintBar
-
 
 # state variable
 var door_open=false
@@ -27,7 +25,6 @@ func _on_DoorArea_body_exited(body):
 		HintBar.reset()
 		if proximity_item == "door":
 			proximity_item = ""
-
 
 func _input(event):
 	if event.is_action_pressed("interact"):
@@ -64,10 +61,6 @@ func _on_DesktopArea_body_exited(body):
 		HintBar.reset()
 		if proximity_item == "computer":
 			proximity_item = ""
-
-
-
-
 
 func _on_switch_board_body_entered(body):
 	if body.is_in_group("PLAYER"):

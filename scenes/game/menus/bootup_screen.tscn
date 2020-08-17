@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://textures/fonts/Cave-Story.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://textures/logos/godot.png" type="Texture" id=2]
+[ext_resource path="res://textures/logos/DBS.png" type="Texture" id=3]
+[ext_resource path="res://scripts/game/menus/bootup_screen.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "bootup"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("DBS:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1.4, 2.4, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("godot:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 3.8, 4.6, 5.5, 6.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("prompt:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 13, 14.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.494118, 0, 0, 0 ), Color( 0.458824, 0, 0, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("warning:percent_visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 7, 12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.854902, 0.854902, 0.854902, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DBS" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 512, 296 )
+texture = ExtResource( 3 )
+
+[node name="godot" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 512, 296 )
+scale = Vector2( 0.542969, 0.559846 )
+texture = ExtResource( 2 )
+
+[node name="warning" type="RichTextLabel" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 24.0
+margin_top = 168.0
+margin_right = 571.0
+margin_bottom = 270.0
+rect_scale = Vector2( 1.784, 2.592 )
+custom_fonts/normal_font = SubResource( 1 )
+visible_characters = 0
+percent_visible = 0.0
+text = "This game contains sensitive subjects such as: suicide, violence, the loss of close relatives and gore.
+
+A very small percentage of individuals may experience epileptic seizures or blackouts when exposed to certain light patterns or flashing lights. Exposure to certain patterns or backgrounds on a television screen or when playing video games may trigger epileptic seizures or blackouts in these individuals.
+
+Please take care of yourself before playing."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prompt" type="RichTextLabel" parent="."]
+modulate = Color( 0.494118, 0, 0, 0 )
+margin_left = 840.0
+margin_top = 536.0
+margin_right = 925.0
+margin_bottom = 547.0
+rect_scale = Vector2( 1.409, 2.213 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[shake] PRESS ENTER"
+text = " PRESS ENTER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "bootup"
+anims/bootup = SubResource( 2 )

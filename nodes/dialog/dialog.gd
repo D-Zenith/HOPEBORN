@@ -32,6 +32,5 @@ func load_dialog():
 		queue_free()
 	dialog_index += 1
 
-
 func _on_Tween_tween_completed(object, key):
 	finished = true
