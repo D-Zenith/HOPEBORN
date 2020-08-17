@@ -55,6 +55,9 @@ func consume_turn():
 func enemy_turn():
 	my_turn  = false
 	var orb = EnemyOrb.instance()
-	orb.dir = ($CombatField/Player.translation - $CombatField/Enemy.translation).normalized()
+	var dir = ($CombatField/Player.translation - $CombatField/Enemy.translation).normalized()
+	# to prevent attack from falling
+	dir.y=0
+	orb.dir=dir
 	$CombatField/Enemy.add_child(orb)
 	

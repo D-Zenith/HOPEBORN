@@ -50,10 +50,11 @@ material/0 = SubResource( 3 )
 transform = Transform( 0.965926, 0.0669873, -0.25, 0, 0.965926, 0.258819, 0.258819, -0.25, 0.933013, 0, 3, 3 )
 
 [node name="Player" parent="CombatField" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37548, 0 )
 script = ExtResource( 1 )
 
 [node name="Enemy" type="Sprite3D" parent="CombatField"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76001, 2, -6.88862 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -7 )
 pixel_size = 0.05
 billboard = 2
 shaded = true
@@ -62,6 +63,8 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 100, 75 )
 
 [node name="Lanes" type="Spatial" parent="CombatField"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0312545, 0 )
+visible = false
 
 [node name="Lane1" type="MeshInstance" parent="CombatField/Lanes"]
 transform = Transform( 0.795473, 0.605988, 9.87281e-08, 0, -1.62921e-07, 1, 0.605988, -0.795473, -1.29599e-07, 2.5892, 0.0772748, -3.61512 )
