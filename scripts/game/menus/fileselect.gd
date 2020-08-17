@@ -7,7 +7,10 @@ func _on_quit_pressed():
 	get_tree().quit()
 
 func _on_continue_pressed():
-	pass
+	Loader.goto_scene(new_game.resource_path)
 	
 func _on_new_pressed():
 	Loader.goto_scene(new_game.resource_path)
+
+func _on_settings_press():
+	pass
