@@ -91,25 +91,26 @@ func get_input_for_anim():
 		$AnimationPlayer.play("walk_left")
 	elif Input.is_action_just_released("move_left") and $AnimationPlayer.current_animation == "walk_left":
 		$AnimationPlayer.stop()
-		$Sprite3D.frame = 18
+		$Sprite3D.frame = 15
 
 	elif Input.is_action_pressed("move_right"):
 		$AnimationPlayer.play("walk_right")
 	elif Input.is_action_just_released("move_right") and $AnimationPlayer.current_animation == "walk_right":
 		$AnimationPlayer.stop()
-		$Sprite3D.frame = 6
+		$Sprite3D.frame = 5
 
 	elif Input.is_action_pressed("move_up"):
 		$AnimationPlayer.play("walk_forward")
 	elif Input.is_action_just_released("move_up") and $AnimationPlayer.current_animation == "walk_forward":
 		$AnimationPlayer.stop()
-		$Sprite3D.frame = 12
+		$Sprite3D.frame = 10
 
 	elif Input.is_action_pressed("move_down"):
 		$AnimationPlayer.play("walk_backwards")
 	elif Input.is_action_just_released("move_down") and $AnimationPlayer.current_animation == "walk_backwards":
 		$AnimationPlayer.stop()
 		$Sprite3D.frame = 0
+		
 	if Input.is_action_pressed("move_left") and  Input.is_action_pressed("move_right") or \
 		Input.is_action_pressed("move_up") and  Input.is_action_pressed("move_down"):
 		$AnimationPlayer.stop()
