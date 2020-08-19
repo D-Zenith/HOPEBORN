@@ -1,6 +1,5 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://materials/dirt.tres" type="Material" id=1]
 [ext_resource path="res://scenes/game/indoors/HospitalTest.gd" type="Script" id=2]
 [ext_resource path="res://nodes/dialog/dialog_node.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=4]
@@ -164,7 +163,7 @@ texture = ExtResource( 5 )
 [node name="door" type="MeshInstance" parent="WorldEnvironment/HospitalRoom"]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -4.96711, 1.51317, 0 )
 mesh = SubResource( 15 )
-material/0 = ExtResource( 1 )
+material/0 = null
 
 [node name="door" type="Area" parent="WorldEnvironment/HospitalRoom/door"]
 
