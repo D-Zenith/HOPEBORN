@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/city_1.glb-e4052f13788c4379e549a2d491b2f8c1.scn"
+path="res://.import/city_1.fbx-b4f689cdcf18eed4172f7d2199b13fb9.scn"
 
 [deps]
 
-source_file="res://imports/city_1.glb"
-dest_files=[ "res://.import/city_1.glb-e4052f13788c4379e549a2d491b2f8c1.scn" ]
+source_file="res://city_1.fbx"
+dest_files=[ "res://.import/city_1.fbx-b4f689cdcf18eed4172f7d2199b13fb9.scn" ]
 
 [params]
 
