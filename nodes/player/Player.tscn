@@ -100,7 +100,7 @@ shaded = true
 texture = ExtResource( 2 )
 vframes = 4
 hframes = 5
-frame = 6
+frame = 17
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 1.2463, 0 )

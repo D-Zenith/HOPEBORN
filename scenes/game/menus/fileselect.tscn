@@ -159,7 +159,7 @@ anims/flicker = SubResource( 14 )
 
 [node name="soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -1.196
+volume_db = -7.254
 autoplay = true
 [connection signal="pressed" from="control/background/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="control/background/continue" to="." method="_on_continue_pressed"]

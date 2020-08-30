@@ -17,12 +17,12 @@ dest_files=[ "res://.import/tree.png-c87f56d786da2c6b229d0c4f2f965d95.s3tc.stex"
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.7
+compress/lossy_quality=1.0
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=true
-flags/filter=true
+flags/repeat=1
+flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=1

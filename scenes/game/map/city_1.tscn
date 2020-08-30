@@ -323,7 +323,7 @@ bias = 1.5
 propagation = 0.7
 
 [node name="city_1" type="Spatial"]
-transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="meshes" type="Spatial" parent="."]
 transform = Transform( 89.9417, 0, 0, 0, -1.07219e-05, 89.9417, 0, -89.9417, -1.07219e-05, 0, 0, 0 )
@@ -404,7 +404,7 @@ material/0 = null
 shape = SubResource( 6 )
 
 [node name="Cube008" type="MeshInstance" parent="meshes/road2/Plane002"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1.6834, 1.23861, 1.15813, 0 )
+transform = Transform( 1, 0, 0, 0, 1, -1.42109e-14, 0, 1.42109e-14, 1.6834, 1.23861, 1.15813, 2.84217e-14 )
 mesh = SubResource( 7 )
 material/0 = null
 
@@ -473,7 +473,8 @@ near = 10.0
 far = 100000.0
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.73746 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585675, -0.0270147, 2.75866 )
+speed = 10
 
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.2972, -5.87622 )
