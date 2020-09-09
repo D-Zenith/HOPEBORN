@@ -365,14 +365,13 @@ __meta__ = {
 }
 
 [node name="Bg" type="ColorRect" parent="UI/ScangamePopup"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = -150.0
-margin_right = 150.0
-margin_bottom = 150.0
+anchor_left = 0.354
+anchor_top = 0.25
+anchor_right = 0.646
+anchor_bottom = 0.75
+margin_left = -0.496002
+margin_right = 0.495972
+margin_bottom = -3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
 rect_min_size = Vector2( 300, 300 )
@@ -385,7 +384,7 @@ __meta__ = {
 self_modulate = Color( 1, 1, 1, 0 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.34902, 1, 0.27451, 1 )
+color = Color( 1, 0.27451, 0.27451, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -417,15 +416,43 @@ playback_process_mode = 0
 playback/repeat = true
 
 [node name="ScanCrosshair" type="Sprite" parent="UI/ScangamePopup/Bg"]
-visible = false
 modulate = Color( 1, 0, 0, 1 )
 texture = ExtResource( 6 )
+
+[node name="scan_result" type="Label" parent="UI/ScangamePopup"]
+visible = false
+anchor_left = 0.354
+anchor_top = 0.257
+anchor_right = 0.646
+anchor_bottom = 0.748
+margin_left = -0.496002
+margin_top = -0.199997
+margin_right = -0.504028
+margin_bottom = 0.199982
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="UI/ScangamePopup/scan_result"]
+anchor_left = 0.248
+anchor_top = 0.8
+anchor_right = 0.746
+anchor_bottom = 0.96
+margin_left = -0.0261765
+margin_top = 0.0628967
+margin_right = 0.0718079
+margin_bottom = -0.137115
+text = "Proceed"
 [connection signal="pressed" from="UI/VBoxContainer/AttackButton" to="." method="_on_AttackButton_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ItemButton" to="." method="_on_ItemButton_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ScanButton" to="." method="_on_ScanButton_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/RunButton" to="." method="_on_RunButton_pressed"]
 [connection signal="visibility_changed" from="UI/ScangamePopup" to="." method="_on_ScangamePopup_visibility_changed"]
+[connection signal="animation_finished" from="UI/ScangamePopup/Bg/HitRect/ScanAnim" to="." method="_on_ScanAnim_animation_finished"]
 [connection signal="button_down" from="UI/ScangamePopup/Bg/ScanStopButton" to="." method="_on_ScanStopButton_button_down"]
 [connection signal="tween_completed" from="UI/ScangamePopup/Bg/ScanTween" to="." method="_on_ScanTween_tween_completed"]
+[connection signal="pressed" from="UI/ScangamePopup/scan_result/Button" to="." method="_on_Button_pressed"]
 
 [editable path="CombatField/Player"]

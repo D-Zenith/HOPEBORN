@@ -44,12 +44,12 @@ func _on_ScanButton_pressed():
 
 func _on_ScangamePopup_visibility_changed():
 	if $UI/ScangamePopup.visible:
+		$UI/ScangamePopup/Bg.show()
 		$UI/ScangamePopup/Bg/ScanCrosshair.position = Vector2(rand_range(0,300), rand_range(0,300))
 		$UI/ScangamePopup/Bg/ScanCrosshair.show()
 		scan_line = "H"
 		$UI/ScangamePopup/Bg/LineH.show()
 		start_scanning()
-
 func start_scanning():
 	var dir = "y" if scan_line == "H" else "x"
 	$UI/ScangamePopup/Bg/ScanTween.interpolate_property($UI/ScangamePopup/Bg.get_node("Line" + scan_line),"position:" + dir,tween_limits[0],tween_limits[1],2)
@@ -119,3 +119,20 @@ func _input(event):
 
 
 
+
+
+func _on_ScanAnim_animation_finished(anim_name):
+	if anim_name=="scanned":
+		$UI/ScangamePopup/scan_result.text="scan results \n enemy type : unknown" + "\n enemy health"+convert(enemy_hp,TYPE_STRING)+"\n enemy damage :"+convert(enemy_dmg,TYPE_STRING)+"\n enemy dodge chance : "+convert(enemy_dodge,TYPE_STRING)+"\n escape chance : "+convert(escape_chance,TYPE_STRING)
+		$UI/ScangamePopup/Bg.hide()
+		$UI/ScangamePopup/scan_result.show()
+		
+	else:
+		$UI/ScangamePopup.hide()
+		consume_turn()
+
+
+func _on_Button_pressed():
+	$UI/ScangamePopup/scan_result.hide()
+	$UI/ScangamePopup.hide()
+	consume_turn()
