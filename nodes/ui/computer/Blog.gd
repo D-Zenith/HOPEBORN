@@ -12,5 +12,5 @@ func _on_MinButton_pressed():
 
 
 func _on_CloseButton_pressed():
-	queue_free()
 	emit_signal("closed")
+	queue_free()
