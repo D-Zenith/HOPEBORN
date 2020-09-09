@@ -1,4 +1,5 @@
 extends KinematicBody
+
 export var speed = 20
 export var jump_str=40
 export var camera_on = true
