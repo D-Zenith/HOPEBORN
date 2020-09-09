@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://nodes/player/PlayerCombat.gd" type="Script" id=1]
 [ext_resource path="res://textures/sprites/enemies/horrorsus.png" type="Texture" id=2]
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game/combat/CombatScene.gd" type="Script" id=4]
+[ext_resource path="res://textures/sprites/player/mc_head.png" type="Texture" id=5]
+[ext_resource path="res://textures/ui/scan_crosshair.png" type="Texture" id=6]
 
 [sub_resource type="Environment" id=1]
 background_mode = 1
@@ -18,14 +20,123 @@ height = 0.1
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.0980392, 0.0980392, 0.0980392, 1 )
 
-[sub_resource type="QuadMesh" id=4]
-size = Vector2( 5, 10 )
+[sub_resource type="Animation" id=4]
+resource_name = "init"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 5, 4 ), Vector3( 0, 3, 3 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -15, 0 ), Vector3( -15, -15, 0 ) ]
+}
 
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.686275, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0, 0.623529, 0.0470588, 1 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 12.0163 )
+
+[sub_resource type="Animation" id=8]
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "failed"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 362, 150 ), Vector2( 350, 155 ), Vector2( 340, 170 ), Vector2( 355, 155 ), Vector2( 362, 150 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.27451, 0.27451, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "scanned"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.34902, 1, 0.27451, 1 ) ]
+}
 
 [node name="CombatScene" type="Control"]
 anchor_right = 1.0
@@ -48,10 +159,18 @@ material/0 = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="CombatField"]
 transform = Transform( 0.965926, 0.0669873, -0.25, 0, 0.965926, 0.258819, 0.258819, -0.25, 0.933013, 0, 3, 3 )
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CombatField/Camera"]
+autoplay = "init"
+anims/init = SubResource( 4 )
 
 [node name="Player" parent="CombatField" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.37548, 0 )
 script = ExtResource( 1 )
+
+[node name="Camera" parent="CombatField/Player" index="2"]
+current = false
 
 [node name="Enemy" type="Sprite3D" parent="CombatField"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -7 )
@@ -62,19 +181,11 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 100, 75 )
 
-[node name="Lanes" type="Spatial" parent="CombatField"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0312545, 0 )
-visible = false
-
-[node name="Lane1" type="MeshInstance" parent="CombatField/Lanes"]
-transform = Transform( 0.795473, 0.605988, 9.87281e-08, 0, -1.62921e-07, 1, 0.605988, -0.795473, -1.29599e-07, 2.5892, 0.0772748, -3.61512 )
-mesh = SubResource( 4 )
-material/0 = null
-
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
@@ -166,7 +277,155 @@ margin_right = 812.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 200, 100 )
 text = "RUN AWAY"
+
+[node name="MinigamePopup" type="ColorRect" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.682353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="ColorRect" parent="UI/MinigamePopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -150.0
+margin_right = 150.0
+margin_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 300, 300 )
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MinigamePopup/Bg"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/MinigamePopup/Bg/HBoxContainer"]
+margin_right = 97.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+color = Color( 0.164706, 0.164706, 0.164706, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="UI/MinigamePopup/Bg/HBoxContainer"]
+margin_left = 101.0
+margin_right = 198.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+color = Color( 0.164706, 0.164706, 0.164706, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="UI/MinigamePopup/Bg/HBoxContainer"]
+margin_left = 202.0
+margin_right = 300.0
+margin_bottom = 300.0
+size_flags_horizontal = 3
+color = Color( 0.164706, 0.164706, 0.164706, 1 )
+
+[node name="Player" type="Sprite" parent="UI/MinigamePopup/Bg"]
+position = Vector2( 150, 250 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+
+[node name="PlayerBody" type="StaticBody2D" parent="UI/MinigamePopup/Bg/Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MinigamePopup/Bg/Player/PlayerBody"]
+shape = SubResource( 7 )
+
+[node name="OrbContainer" type="Node2D" parent="UI/MinigamePopup/Bg"]
+
+[node name="HitRect" type="ColorRect" parent="UI/MinigamePopup/Bg"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0.27451, 0.27451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitAnim" type="AnimationPlayer" parent="UI/MinigamePopup/Bg/HitRect"]
+anims/hit = SubResource( 8 )
+
+[node name="ScangamePopup" type="ColorRect" parent="UI"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.682353 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" type="ColorRect" parent="UI/ScangamePopup"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -150.0
+margin_right = 150.0
+margin_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_min_size = Vector2( 300, 300 )
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HitRect" type="ColorRect" parent="UI/ScangamePopup/Bg"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.34902, 1, 0.27451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScanAnim" type="AnimationPlayer" parent="UI/ScangamePopup/Bg/HitRect"]
+anims/failed = SubResource( 9 )
+anims/scanned = SubResource( 10 )
+
+[node name="LineH" type="Line2D" parent="UI/ScangamePopup/Bg"]
+visible = false
+points = PoolVector2Array( 0, 0, 300, 0 )
+width = 5.0
+default_color = Color( 0.4, 1, 0.407843, 1 )
+
+[node name="LineV" type="Line2D" parent="UI/ScangamePopup/Bg"]
+visible = false
+points = PoolVector2Array( 0, 0, 0, 300 )
+width = 5.0
+default_color = Color( 0.4, 1, 0.407843, 1 )
+
+[node name="ScanStopButton" type="Button" parent="UI/ScangamePopup/Bg"]
+self_modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ScanTween" type="Tween" parent="UI/ScangamePopup/Bg"]
+repeat = true
+playback_process_mode = 0
+playback/repeat = true
+
+[node name="ScanCrosshair" type="Sprite" parent="UI/ScangamePopup/Bg"]
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+texture = ExtResource( 6 )
 [connection signal="pressed" from="UI/VBoxContainer/AttackButton" to="." method="_on_AttackButton_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ItemButton" to="." method="_on_ItemButton_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/ScanButton" to="." method="_on_ScanButton_pressed"]
 [connection signal="pressed" from="UI/VBoxContainer/RunButton" to="." method="_on_RunButton_pressed"]
+[connection signal="visibility_changed" from="UI/ScangamePopup" to="." method="_on_ScangamePopup_visibility_changed"]
+[connection signal="button_down" from="UI/ScangamePopup/Bg/ScanStopButton" to="." method="_on_ScanStopButton_button_down"]
+[connection signal="tween_completed" from="UI/ScangamePopup/Bg/ScanTween" to="." method="_on_ScanTween_tween_completed"]
+
+[editable path="CombatField/Player"]
