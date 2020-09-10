@@ -4,7 +4,7 @@
 [ext_resource path="res://nodes/enemies/MinigameOrb.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 18.2647, 19.5729 )
+extents = Vector2( 16, 16 )
 
 [node name="MinigameOrb" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -17,6 +17,7 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 0, 0, 1 )
 scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 1 )
 [connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]

@@ -67,7 +67,11 @@ func _on_switch_board_body_entered(body):
 		HintBar.show_hint("Lights: Press E to use.")
 		proximity_item = "lights"
 
-
 func _on_exit_body_entered(body):
 	if body.name=="Player":
 		Loader.goto_scene("res://scenes/game/map/neighborhood.tscn")
+
+func _on_switch_board2_body_entered(body):
+	if body.is_in_group("PLAYER"):
+		HintBar.show_hint("Lights: Press E to use.")
+		proximity_item = "tubelight"
