@@ -1,10 +1,9 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/game/indoors/HospitalTest.gd" type="Script" id=2]
 [ext_resource path="res://nodes/dialog/dialog_node.tscn" type="PackedScene" id=3]
 [ext_resource path="res://nodes/player/Player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://textures/environment/lightbulb.png" type="Texture" id=5]
-[ext_resource path="res://scenes/game/menus/in_game_menu.tscn" type="PackedScene" id=6]
 [ext_resource path="res://nodes/ui/Fade.tscn" type="PackedScene" id=7]
 [ext_resource path="res://textures/environment/Dark_Wood_Floor.jpg" type="Texture" id=8]
 [ext_resource path="res://textures/environment/trumploy.png" type="Texture" id=9]
@@ -173,9 +172,10 @@ shape = SubResource( 16 )
 
 [node name="Player" parent="WorldEnvironment/HospitalRoom" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38511, 0.0985789, 1.55264 )
+speed = 6
+jump_str = 40
 camera_on = false
-
-[node name="Control" parent="." instance=ExtResource( 6 )]
+gravity = -4
 
 [node name="dialog_node" parent="." instance=ExtResource( 3 )]
 

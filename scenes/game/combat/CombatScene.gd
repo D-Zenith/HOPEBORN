@@ -95,17 +95,13 @@ func _on_RunButton_pressed():
 		("You will die!")
 
 func consume_turn():
-	$CombatField/Camera/Intro.play("enemy_turn")
+	$warning/blip.play("modulate")
 	#check on intro anim finished the track for the danger sign is there
-
+	
+func _on_blip_animation_finished(anim_name):
+	enemy_turn()
+	
 func enemy_turn():
-#	my_turn  = false
-#	var orb = EnemyOrb.instance()
-#	var dir = ($CombatField/Player.translation - $CombatField/Enemy.translation).normalized()
-#	# to prevent attack from falling
-#	dir.y=0
-#	orb.dir=dir
-#	$CombatField/Enemy.add_child(orb)
 	MinigamePopup.show()
 	for i in range(17):
 		var _orb = MinigameOrb.instance()

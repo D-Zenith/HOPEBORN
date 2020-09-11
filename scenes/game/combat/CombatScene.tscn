@@ -12,7 +12,7 @@
 [ext_resource path="res://sound/soundFX/battle.wav" type="AudioStream" id=10]
 [ext_resource path="res://sound/soundFX/beep.wav" type="AudioStream" id=11]
 [ext_resource path="res://sound/soundFX/appear.wav" type="AudioStream" id=12]
-[ext_resource path="res://sound/soundtrack/battle_placeholder.wav" type="AudioStream" id=13]
+[ext_resource path="res://sound/soundtrack/hom_rev.wav" type="AudioStream" id=13]
 [ext_resource path="res://textures/ui/combat/attack_icon.png" type="Texture" id=14]
 [ext_resource path="res://textures/ui/combat/item_icon.png" type="Texture" id=15]
 [ext_resource path="res://textures/ui/combat/run_icon.png" type="Texture" id=16]
@@ -41,34 +41,6 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "enemy_turn"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite3D:opacity")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 1.0, 0.0 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("../../sound3:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-
-[sub_resource type="Animation" id=4]
 length = 2.9
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:rotation_degrees")
@@ -203,15 +175,15 @@ tracks/10/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="CylinderMesh" id=5]
+[sub_resource type="CylinderMesh" id=4]
 top_radius = 10.0
 bottom_radius = 10.0
 height = 0.1
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.309804, 0, 0, 1 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 length = 5.0
 loop = true
 tracks/0/type = "value"
@@ -227,7 +199,7 @@ tracks/0/keys = {
 "values": [ Rect2( 2.024, 0, 96, 71.908 ), Rect2( 3.654, 83.545, 96, 65.31 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:translation")
 tracks/0/interp = 1
@@ -265,22 +237,26 @@ tracks/2/keys = {
 "values": [ false, true, false ]
 }
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=8]
 size = 60
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 0.686275, 0, 0, 1 )
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="DynamicFont" id=10]
 size = 50
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0, 0.623529, 0.0470588, 1 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=12]
 size = 50
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 30
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=14]
@@ -288,7 +264,7 @@ size = 30
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=15]
-size = 30
+size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=16]
@@ -303,14 +279,10 @@ font_data = ExtResource( 3 )
 size = 50
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=19]
-size = 50
-font_data = ExtResource( 3 )
-
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=19]
 extents = Vector2( 10, 12 )
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=20]
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:self_modulate")
 tracks/0/interp = 1
@@ -324,7 +296,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=21]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("..:rect_position")
@@ -363,7 +335,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=22]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:self_modulate")
@@ -390,13 +362,40 @@ tracks/1/keys = {
 "values": [ Color( 0.34902, 1, 0.27451, 1 ) ]
 }
 
+[sub_resource type="DynamicFont" id=23]
+size = 40
+font_data = ExtResource( 3 )
+
 [sub_resource type="DynamicFont" id=24]
 size = 40
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=25]
-size = 40
-font_data = ExtResource( 3 )
+[sub_resource type="Animation" id=25]
+resource_name = "modulate"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.5, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../UI/MinigamePopup:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="CombatScene" type="Control"]
 anchor_right = 1.0
@@ -421,20 +420,12 @@ current = true
 
 [node name="Intro" type="AnimationPlayer" parent="CombatField/Camera"]
 autoplay = "transition"
-anims/enemy_turn = SubResource( 3 )
-anims/transition = SubResource( 4 )
-
-[node name="Sprite3D" type="Sprite3D" parent="CombatField/Camera"]
-transform = Transform( 1, 5.58794e-09, 1.49012e-08, -3.72529e-09, 1, 0, 1.49012e-08, 2.98023e-08, 1, 0, 0, -1.617 )
-cast_shadow = 0
-opacity = 0.0
-billboard = 1
-texture = ExtResource( 17 )
+anims/transition = SubResource( 3 )
 
 [node name="Floor" type="MeshInstance" parent="CombatField"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.86366, 0, -3.93188 )
-mesh = SubResource( 5 )
-material/0 = SubResource( 6 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
 
 [node name="Enemy" type="Sprite3D" parent="CombatField"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.43162, 2, 0.495568 )
@@ -448,7 +439,7 @@ region_rect = Rect2( 2.024, 0, 96, 71.908 )
 
 [node name="idle" type="AnimationPlayer" parent="CombatField/Enemy"]
 autoplay = "idle"
-anims/idle = SubResource( 7 )
+anims/idle = SubResource( 6 )
 
 [node name="Player" type="Sprite3D" parent="CombatField"]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.86601, 0 )
@@ -457,7 +448,7 @@ billboard = 2
 texture = ExtResource( 1 )
 
 [node name="Attack" type="AnimationPlayer" parent="CombatField/Player"]
-anims/attack = SubResource( 8 )
+anims/attack = SubResource( 7 )
 
 [node name="PlayerN" type="Sprite3D" parent="CombatField"]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.78914, 0 )
@@ -481,7 +472,7 @@ margin_left = 808.0
 margin_top = 208.0
 margin_right = 912.0
 margin_bottom = 248.0
-custom_fonts/normal_font = SubResource( 9 )
+custom_fonts/normal_font = SubResource( 8 )
 bbcode_enabled = true
 bbcode_text = "[shake]20!"
 text = "20!"
@@ -493,8 +484,8 @@ margin_right = 300.001
 margin_bottom = 50.0
 grow_horizontal = 0
 rect_min_size = Vector2( 300, 50 )
-custom_styles/fg = SubResource( 10 )
-custom_fonts/font = SubResource( 11 )
+custom_styles/fg = SubResource( 9 )
+custom_fonts/font = SubResource( 10 )
 value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -508,8 +499,8 @@ margin_right = -1028.0
 margin_bottom = 50.0
 grow_horizontal = 0
 rect_min_size = Vector2( 300, 50 )
-custom_styles/fg = SubResource( 12 )
-custom_fonts/font = SubResource( 13 )
+custom_styles/fg = SubResource( 11 )
+custom_fonts/font = SubResource( 12 )
 value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -539,7 +530,7 @@ __meta__ = {
 margin_right = 200.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 200, 100 )
-custom_fonts/font = SubResource( 14 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_colors/font_color = Color( 0, 0.458824, 0.823529, 1 )
 custom_colors/font_color_hover = Color( 0.0235294, 0, 0.803922, 1 )
@@ -551,7 +542,7 @@ margin_left = 204.0
 margin_right = 456.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 200, 100 )
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 14 )
 custom_colors/font_color = Color( 0, 0.458824, 0.823529, 1 )
 custom_colors/font_color_hover = Color( 0.0235294, 0, 0.803922, 1 )
 text = "Energy Drink (+50% ATK)"
@@ -573,7 +564,7 @@ modulate = Color( 1, 0, 0, 1 )
 margin_right = 250.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 250, 100 )
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color_hover = Color( 0.45098, 0, 0, 1 )
 text = "ATTACK"
 icon = ExtResource( 14 )
@@ -584,7 +575,7 @@ margin_left = 254.0
 margin_right = 504.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 250, 100 )
-custom_fonts/font = SubResource( 17 )
+custom_fonts/font = SubResource( 16 )
 custom_colors/font_color_hover = Color( 0.211765, 0.431373, 0.760784, 1 )
 text = "ITEM"
 icon = ExtResource( 15 )
@@ -595,7 +586,7 @@ margin_left = 508.0
 margin_right = 758.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 250, 100 )
-custom_fonts/font = SubResource( 18 )
+custom_fonts/font = SubResource( 17 )
 custom_colors/font_color_hover = Color( 0.0745098, 0.619608, 0.192157, 1 )
 text = "SCAN"
 icon = ExtResource( 6 )
@@ -606,7 +597,7 @@ margin_left = 762.0
 margin_right = 1023.4
 margin_bottom = 100.0
 rect_min_size = Vector2( 261.399, 100 )
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 18 )
 custom_colors/font_color_hover = Color( 0.745098, 0.117647, 0.482353, 1 )
 text = "RUN"
 icon = ExtResource( 16 )
@@ -674,7 +665,7 @@ hframes = 3
 [node name="PlayerBody" type="StaticBody2D" parent="UI/MinigamePopup/Bg/Player"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UI/MinigamePopup/Bg/Player/PlayerBody"]
-shape = SubResource( 20 )
+shape = SubResource( 19 )
 
 [node name="OrbContainer" type="Node2D" parent="UI/MinigamePopup/Bg"]
 
@@ -688,7 +679,7 @@ __meta__ = {
 }
 
 [node name="HitAnim" type="AnimationPlayer" parent="UI/MinigamePopup/Bg/HitRect"]
-anims/hit = SubResource( 21 )
+anims/hit = SubResource( 20 )
 
 [node name="ScangamePopup" type="ColorRect" parent="UI"]
 visible = false
@@ -725,8 +716,8 @@ __meta__ = {
 }
 
 [node name="ScanAnim" type="AnimationPlayer" parent="UI/ScangamePopup/Bg/HitRect"]
-anims/failed = SubResource( 22 )
-anims/scanned = SubResource( 23 )
+anims/failed = SubResource( 21 )
+anims/scanned = SubResource( 22 )
 
 [node name="LineH" type="Line2D" parent="UI/ScangamePopup/Bg"]
 visible = false
@@ -769,7 +760,7 @@ margin_left = 0.511993
 margin_top = -0.199997
 margin_right = 0.511963
 margin_bottom = 0.199982
-custom_fonts/font = SubResource( 24 )
+custom_fonts/font = SubResource( 23 )
 custom_colors/font_color = Color( 1, 0.937255, 0, 1 )
 align = 1
 uppercase = true
@@ -786,12 +777,21 @@ margin_left = -0.0261765
 margin_top = 0.0628967
 margin_right = 0.0718079
 margin_bottom = -0.137115
-custom_fonts/font = SubResource( 25 )
+custom_fonts/font = SubResource( 24 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 0.533333, 0.533333, 0.533333, 1 )
 custom_colors/font_color_pressed = Color( 0.211765, 0.211765, 0.211765, 1 )
 text = "Continue"
 flat = true
+
+[node name="warning" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 768, 384 )
+scale = Vector2( 1.3225, 1.2625 )
+texture = ExtResource( 17 )
+
+[node name="blip" type="AnimationPlayer" parent="warning"]
+anims/modulate = SubResource( 25 )
 
 [node name="sound1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
@@ -807,7 +807,7 @@ stream = ExtResource( 10 )
 
 [node name="Soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
-volume_db = -5.782
+volume_db = -2.0
 [connection signal="animation_finished" from="CombatField/Camera/Intro" to="." method="_on_Intro_animation_finished"]
 [connection signal="animation_finished" from="CombatField/Player/Attack" to="." method="_on_Attack_animation_finished"]
 [connection signal="pressed" from="UI/VBoxContainer/AttackButton" to="." method="_on_AttackButton_pressed"]
@@ -819,3 +819,4 @@ volume_db = -5.782
 [connection signal="button_down" from="UI/ScangamePopup/Bg/ScanStopButton" to="." method="_on_ScanStopButton_button_down"]
 [connection signal="tween_completed" from="UI/ScangamePopup/Bg/ScanTween" to="." method="_on_ScanTween_tween_completed"]
 [connection signal="pressed" from="UI/ScangamePopup/scan_result/Button" to="." method="_on_Button_pressed"]
+[connection signal="animation_finished" from="warning/blip" to="." method="_on_blip_animation_finished"]

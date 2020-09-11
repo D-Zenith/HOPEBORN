@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hom_rev.wav-a61d5fa3ac94504878827a97f70a9fef.sample"
+
+[deps]
+
+source_file="res://sound/soundtrack/hom_rev.wav"
+dest_files=[ "res://.import/hom_rev.wav-a61d5fa3ac94504878827a97f70a9fef.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=true
+compress/mode=0
