@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/attack_icon.png-de961fa40d173ce15cb89ff169ba995d.stex"
+path="res://.import/text_box.png-9f8ba45bc84a66714d2e00af1538384d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/ui/attack_icon.png"
-dest_files=[ "res://.import/attack_icon.png-de961fa40d173ce15cb89ff169ba995d.stex" ]
+source_file="res://textures/ui/combat/text_box.png"
+dest_files=[ "res://.import/text_box.png-9f8ba45bc84a66714d2e00af1538384d.stex" ]
 
 [params]
 

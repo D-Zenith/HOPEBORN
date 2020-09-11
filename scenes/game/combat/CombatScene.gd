@@ -22,6 +22,9 @@ func _process(delta):
 func _on_Intro_animation_finished(anim_name):
 	get_node("Soundtrack").play()
 	$WorldEnvironment/background.play("flash")
+	# here is where the enemy turn happens
+	if anim_name=="enemy_turn":
+		enemy_turn()
 
 func roll_dice(chance):
 	randomize()
@@ -92,7 +95,8 @@ func _on_RunButton_pressed():
 		("You will die!")
 
 func consume_turn():
-	enemy_turn()
+	$CombatField/Camera/Intro.play("enemy_turn")
+	#check on intro anim finished the track for the danger sign is there
 
 func enemy_turn():
 #	my_turn  = false
