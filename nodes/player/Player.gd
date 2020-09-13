@@ -13,7 +13,9 @@ var inair
 func _ready():
 	$Camera.current = camera_on
 	inair=false
-
+	print("coming_from_combat, (in player script)",GlobalLocation.coming_from_encounter)
+	if GlobalLocation.coming_from_encounter:
+		translation=GlobalLocation.get_location()
 func _input(event):
 	if event.is_action_pressed("jump") and !inair:
 		inair=true
@@ -33,7 +35,7 @@ func _process(delta):
 	get_input_for_anim()
 	#sync anims
 	if c:
-		print("on land")
+#		print("on land")
 		y=0
 		inair=false
 	# collision check can be used for bouncing later
@@ -118,3 +120,14 @@ func get_input_for_anim():
 		$Sprite3D.frame = 0
 	if Input.is_action_just_pressed("jump"):
 		pass
+
+
+
+
+func _on_player_area_entered(area):
+	print(area.name)
+	if area.name == "safe_area_enemy":
+		print("saving_player_location",translation)
+		GlobalLocation.set_location(translation)
+
+

@@ -11,8 +11,11 @@ onready var anim=$AnimationPlayer
 func _ready():
 	var root = get_tree().get_root()
 	current_scene = root.get_child(root.get_child_count() - 1)
+	
 
 func goto_scene(path): # game requests to switch to this scene
+	check_combat(current_scene.filename,"from")
+	check_combat(path,"to")
 	loader = ResourceLoader.load_interactive(path)
 	if loader == null: # check for errors
 		print("error")
@@ -73,3 +76,18 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 func _on_Timer_timeout():
 	delay=true
 	anim.play_backwards("fade")
+
+func check_combat(sc,key):
+	print(sc)
+	if sc == "res://scenes/game/combat/CombatScene.tscn":
+		
+		if key =="to":
+			print("going to combat")
+			GlobalLocation.set_scene(current_scene.filename)
+		if key == "from":
+			print("coming from combat")
+			GlobalLocation.coming_from_encounter=true
+		else:
+			GlobalLocation.coming_from_encounter=false
+		
+

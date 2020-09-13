@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Loader="*res://scenes/game/singletons/Loader.tscn"
+GlobalLocation="*res://scenes/game/singletons/global_location.gd"
 
 [display]
 

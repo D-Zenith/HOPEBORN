@@ -416,7 +416,7 @@ anims/flash = SubResource( 2 )
 [node name="CombatField" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="CombatField"]
-transform = Transform( 0.988134, 0.00538794, -0.153498, -0.0729911, 0.895795, -0.438433, 0.13514, 0.444434, 0.88556, 2.64829, 2.93997, 5.63354 )
+transform = Transform( 0.990134, -1.04308e-07, -0.140124, -0.107897, 0.638029, -0.762416, 0.0894031, 0.770012, 0.631735, 2.64829, 2.93997, 5.63354 )
 current = true
 
 [node name="Intro" type="AnimationPlayer" parent="CombatField/Camera"]

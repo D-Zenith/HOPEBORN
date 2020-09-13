@@ -15,6 +15,10 @@ var attack_dmg = 20
 var scan_line = "H"
 var tween_limits = [0,300]
 
+
+
+
+
 func _process(delta):
 	EnemyHP.value = enemy_hp
 	MyHP.value = my_hp
@@ -91,6 +95,7 @@ func _on_RunButton_pressed():
 	var will_escape = randi() % 101
 	if will_escape <= escape_chance:
 		("You escaped successfully!")
+		Loader.goto_scene(GlobalLocation.get_scene())
 	else:
 		("You will die!")
 
