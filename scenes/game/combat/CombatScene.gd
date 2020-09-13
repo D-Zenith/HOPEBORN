@@ -103,12 +103,12 @@ func _on_blip_animation_finished(anim_name):
 	
 func enemy_turn():
 	MinigamePopup.show()
-	for i in range(17):
+	for i in range(20):
 		var _orb = MinigameOrb.instance()
 		_orb.position.x = [50,150,250][randi() % 3] 
 		$UI/MinigamePopup/Bg/OrbContainer.add_child(_orb)
-		yield(get_tree().create_timer(0.32), "timeout")
-	yield(get_tree().create_timer(0.67), "timeout")
+		yield(get_tree().create_timer(0.30), "timeout")
+	yield(get_tree().create_timer(0.58), "timeout")
 	
 	$UI/VBoxContainer.show()
 	
