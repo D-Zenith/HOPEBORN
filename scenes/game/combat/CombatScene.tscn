@@ -455,6 +455,7 @@ anims/attack = SubResource( 7 )
 
 [node name="PlayerN" type="Sprite3D" parent="CombatField"]
 transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.78914, 0 )
+visible = false
 billboard = 2
 texture = ExtResource( 8 )
 vframes = 4
