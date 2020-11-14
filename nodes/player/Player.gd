@@ -1,93 +1,67 @@
 extends KinematicBody
 
-export var speed = 2
-export var jump_str= 5
-export var camera_on = true
-export var gravity = -10
+var speed = 5
+var acceleration = 10
+var gravity = 0.65
+var jump = 4
 
-#higher gravity make it slower to walk and shorter jumps
-#tbh the jumps are too fast 
-var dir = []
+var direction = Vector3()
+var velocity = Vector3()
+var fall = Vector3() 
+var vvel = Vector3()
+var inertia
+var prev_pos
+
 var y=0
 var inair
+
 func _ready():
-	$Camera.current = camera_on
-	inair=false
+	prev_pos = global_transform.origin
+	
 	print("coming_from_combat, (in player script)",GlobalLocation.coming_from_encounter)
 	if GlobalLocation.coming_from_encounter:
 		translation=GlobalLocation.get_location()
+		
 func _input(event):
-	if event.is_action_pressed("jump") and !inair:
-		inair=true
-		y +=jump_str
-# one press actions here
-
-func _process(delta):
-	var x = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left"))*speed
-	y += gravity()
-	var z =  (-Input.get_action_strength("move_up") + Input.get_action_strength("move_down"))*speed
-	#components assigned
-	var velocity = Vector3(x,0,z)
-	velocity.y=y
-	#vel assigned
-	var c = move_and_collide(velocity*delta)
-	#movement 
-	get_input_for_anim()
-	#sync anims
-	if c:
-#		print("on land")
-		y=0
-		inair=false
-	# collision check can be used for bouncing later
+	pass
+		
+func _physics_process(delta):		
+	direction = Vector3()
 	
-# made a gravity func in case we need variable gravity later
+	if Input.is_action_pressed("move_up"):
+		direction -= transform.basis.z
+	
+	elif Input.is_action_pressed("move_down"):
+		direction += transform.basis.z
+		
+	if Input.is_action_pressed("move_left"):
+		direction -= transform.basis.x			
+		
+	elif Input.is_action_pressed("move_right"):
+		direction += transform.basis.x
+		
+	inertia = (prev_pos - global_transform.origin).length() * speed 
+	direction = direction.normalized() * speed
+	direction += direction * (1.5 - inertia)
+	direction.y = vvel.y 
+	
+	if not is_on_floor():
+		vvel.y -= gravity
+	else:
+		vvel.y = -0.1
+	
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		vvel.y = jump
+		move_and_slide(vvel, Vector3.UP)
+	
+	prev_pos = global_transform.origin
+	
+	move_and_slide_with_snap(direction, Vector3.DOWN, Vector3.UP, true, 7, 0.8) 
+		
+	get_input_for_anim()
+	
 func gravity():
 	return gravity
-
-#	if Input.is_action_just_pressed("cam_orb_left"):
-#		print("orb_left")
-#		$camera_rig.rotation.y=lerp_angle(rotation.y,rotation.y-deg2rad(90),1)
-#		print($camera_rig.rotation_degrees.y)
-#	if Input.is_action_just_pressed("cam_orb_right"):
-#		print("orb_right")
-#		print($camera_rig.rotation_degrees.y)
-#		$camera_rig.rotation.y=lerp_angle(rotation.y,rotation.y+deg2rad(90),1)
-
-#func _input(event):
-#	if event.is_action_pressed("move_left"):
-#		$AnimationPlayer.play("walk_left")
-#		dir.append("left")
-#	elif event.is_action_released("move_left"):
-#		if dir[0] == "left":
-#			$AnimationPlayer.stop()
-#			$Sprite3D.frame = 18
-#		dir.erase("left")
-#	if event.is_action_pressed("move_right"):
-#		$AnimationPlayer.play("walk_right")
-#		dir.append("right")
-#	elif event.is_action_released("move_right"):
-#		if dir[0] == "right":
-#			$AnimationPlayer.stop()
-#			$Sprite3D.frame = 6
-#		dir.erase("right")
-#
-#	if event.is_action_pressed("move_up"):
-#		$AnimationPlayer.play("walk_forward")
-#		dir.append("up")
-#	elif event.is_action_released("move_up"):
-#		if dir[0] == "up":
-#			$AnimationPlayer.stop()
-#			$Sprite3D.frame = 12
-#		dir.erase("up")
-#
-#	if event.is_action_pressed("move_down"):
-#		$AnimationPlayer.play("walk_backwards")
-#		dir.append("down")
-#	elif event.is_action_released("move_down") and dir[0] == "down":
-#		if dir[0] == "down":
-#			$AnimationPlayer.stop()
-#			$Sprite3D.frame = 0
-#		dir.erase("down")
 
 func get_input_for_anim():
 	if Input.is_action_pressed("move_left"):
@@ -121,13 +95,8 @@ func get_input_for_anim():
 	if Input.is_action_just_pressed("jump"):
 		pass
 
-
-
-
 func _on_player_area_entered(area):
 	print(area.name)
 	if area.name == "safe_area_enemy":
 		print("saving_player_location",translation)
 		GlobalLocation.set_location(translation)
-
-
