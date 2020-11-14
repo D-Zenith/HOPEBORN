@@ -36,28 +36,40 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("prompt:modulate")
+tracks/2/path = NodePath("warning:percent_visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 13, 14.5 ),
+"times": PoolRealArray( 7, 12 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0.494118, 0, 0, 0 ), Color( 0.458824, 0, 0, 1 ) ]
+"values": [ 0.0, 1.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("warning:percent_visible")
+tracks/3/path = NodePath("prompt:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 7, 12 ),
+"times": PoolRealArray( 0, 1.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 1.0 ]
+"values": [ Color( 0.211765, 0, 0.380392, 0 ), Color( 0.211765, 0, 0.380392, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("prompt:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 816.438, 599.952 ), Vector2( 816, 568 ) ]
 }
 
 [node name="Control" type="Control"]
@@ -107,16 +119,16 @@ __meta__ = {
 }
 
 [node name="prompt" type="RichTextLabel" parent="."]
-modulate = Color( 0.494118, 0, 0, 0 )
-margin_left = 840.0
-margin_top = 536.0
-margin_right = 925.0
-margin_bottom = 547.0
+modulate = Color( 0.211765, 0, 0.380392, 0 )
+margin_left = 816.438
+margin_top = 599.952
+margin_right = 946.438
+margin_bottom = 610.952
 rect_scale = Vector2( 1.409, 2.213 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[shake] PRESS ENTER"
-text = " PRESS ENTER"
+bbcode_text = "PRESS ENTER TO SKIP"
+text = "PRESS ENTER TO SKIP"
 __meta__ = {
 "_edit_use_anchors_": false
 }
