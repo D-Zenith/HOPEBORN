@@ -1,9 +1,9 @@
 extends KinematicBody
 
-var speed = 5
+export var speed = 5
 var acceleration = 10
-var gravity = 0.65
-var jump = 4
+export var gravity = 0.65
+export var jump = 4
 
 var direction = Vector3()
 var velocity = Vector3()
@@ -35,7 +35,7 @@ func _physics_process(delta):
 		direction += transform.basis.z
 		
 	if Input.is_action_pressed("move_left"):
-		direction -= transform.basis.x			
+		direction -= transform.basis.x
 		
 	elif Input.is_action_pressed("move_right"):
 		direction += transform.basis.x
@@ -56,7 +56,8 @@ func _physics_process(delta):
 	
 	prev_pos = global_transform.origin
 	
-	move_and_slide_with_snap(direction, Vector3.DOWN, Vector3.UP, true, 7, 0.8) 
+#	move_and_slide_with_snap(direction, Vector3.DOWN, Vector3.UP, true, 7, 0.8) 
+	move_and_slide(direction, Vector3.UP)
 		
 	get_input_for_anim()
 	

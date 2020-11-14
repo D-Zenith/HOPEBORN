@@ -471,7 +471,6 @@ material/0 = null
 
 [node name="Player" parent="." instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585675, -0.0270147, 2.75866 )
-speed = 10
 
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 48.2972, -5.87622 )
